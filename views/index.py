@@ -22,7 +22,7 @@ SNIPPETS['addClass'] = add_class
 THEME = "user"
 renderDict = {}
 
-class index:
+class index(View):
 	def GET(self):
 		v = self.agent_type()
 		self.render = self.render_is(v,THEME,SNIPPETS)
