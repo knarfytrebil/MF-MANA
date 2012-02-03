@@ -37,5 +37,7 @@ for u in USERS:
 					record.renew(d,strm,item,v,'month')
 			balance.out(u.id,strd,day_balance)
 			s = 0
-			if balance.Left(u.id) > 0:s = 1
-			user._set(u.id,status=StatusDict[s])
+			l = balance.Left(u.id)
+			t = balance.Total(u.id)
+			if l > 0:s = 1
+			user._set(u.id,status=StatusDict[s],balance_left=l,balance_total=t)
