@@ -1,0 +1,48 @@
+$def with (renderDict)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>用户登录</title>
+</head>
+<style type="text/css">
+	*{margin:0px;border:0px;padding:0px;}
+	body{}
+	a{color:#000;text-decoration:none;}
+	a:hover{color:#F30;text-decoration:underline;}
+	input{padding:0px;margin:0px;}
+	.txtbox{border:1px solid #eeb133;height:30px;line-height:32px;width:200px;}
+	.bfont{font:700 14px "microsoft yahei"};
+	#login{width:400px;height:100%;overflow:hidden;margin:0px auto;}
+	#loginbox{width:270px;height:140px;margin:25px auto;}
+	.btn{ margin-top:10px;padding:4px 13px; background:#E04613; color:#fff; cursor:pointer; font:bold 14px 'microsoft yahei'}
+    #box{width:420px; height:400px; padding-top:15px;margin-top: -260px; margin-bottom: 0px; overflow: auto;
+     position: absolute; left: 50%; top: 50%; margin-right: 0px; margin-left: -210px;}
+</style>
+<body>
+
+	
+    <div id="box">
+        <center><img src="/static/login/img/title_logo.png" alt="能焰电商" /></center>
+        <form id="login" method="post" action="/">
+        <div id="loginbox">
+            <div style="height:30px; margin-bottom:15px;">
+                <span class="bfont">用户名:</span>
+                <span>$:addClass(renderDict['login'].username.render(),'txtbox')</span>
+            </div>
+            <div style="height:30px; margin-bottom:15px;">
+                <span class="bfont">密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+                <span>$:addClass(renderDict['login'].password.render(),'txtbox')</td>
+            </div>
+            <div style="height:30px; margin-bottom:15px; text-align:center;">
+                <span class="bfont"></span>
+                <span><input class="btn" type="submit" name="userlogin" value="立即登录" /></span>
+            </div>
+        </div>
+        </form>
+      
+    </div>
+    
+
+</body>
+</html>

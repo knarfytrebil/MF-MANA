@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# encoding: utf-8
+"""
+Log.py
+
+Created by 姚 远 on 2011-12-27.
+Copyright (c) 2011 ManaFlame. All rights reserved.
+"""
+
+from modules.base import Base
+
+class Log(Base):
+	"""docstring for Settings"""
+	def add(self,name,value,kind):
+		id = self.last_id() + 1
+		self.sdb.insert(self.table,title=name,value=value,type=kind,id=id)

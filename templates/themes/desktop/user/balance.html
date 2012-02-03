@@ -1,0 +1,52 @@
+$def with (renderDict)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+ <head>
+  <title>$renderDict['name']</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="/static/themes/desktop/user/css/site.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="/static/themes/desktop/user/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/themes/desktop/user/js/jquery.flot.js"></script>
+  <script src="/static/themes/desktop/user/js/jquery.cookie.js"></script>
+ 
+  <!--[if lte IE 8]>
+  	<script language="javascript" type="text/javascript" src="/static/themes/desktop/user/js/excanvas.min.js"></script>
+  <![endif]-->
+<script type="text/javascript">
+function logout(){
+        $$.cookie('uis','null',{path:'/'});
+        window.location.replace("/")
+};
+</script>
+</head>
+ <body>
+ <div id="wrap">
+ 	<div id="hd">$renderDict['name']
+    	<span id="login"><a href="javascript:logout();">退出</a></span>
+    </div>
+ 	<div id="left-side">
+ 		<ul>
+ 			<li><a href="/">主控面板</a></li>
+<!--  			<li><a href="#">上传页面</a></li> -->
+ 			<li><a href="/user/balance">我的帐户</a></li>
+<!--  			<li><a href="#">客户服务</a></li> -->
+ 		</ul>
+ 	</div>
+ 	<!---left side end-->
+ 	<div id="right-side">
+ 	<ul class="balance">
+    <li class="balance-value"> <span class="text date">日期</span><span class="date">金额</span></li>
+    <hr>
+ 	$for balance in renderDict['balances']:
+ 		<li class="balance-value"> <span>$balance.time</span><span>$balance.value</span></li>
+    <hr>
+    <li class="balance-value"> <span class="remain">余额</span><span class="text">$renderDict['left']</span></li>
+ 	</ul>
+ 	</div>
+ 	<!---right side end-->
+ </div>
+ </body>
+</html>

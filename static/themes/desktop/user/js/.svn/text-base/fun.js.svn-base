@@ -1,0 +1,19 @@
+$(document).ready(function() {
+    $('#graphic2').hide();
+	$('#graphic3').hide();
+	$('#hour').click(function(){
+			$('#graphic1').show();
+			$('#graphic2').hide();
+			$('#graphic3').hide();
+		});
+	$('#day').click(function(){
+			$('#graphic2').show();
+			$('#graphic1').hide();
+			$('#graphic3').hide();
+		});
+	$('#month').click(function(){
+		$('#graphic3').show();
+		$('#graphic1').hide();
+		$('#graphic2').hide();
+	});
+});

@@ -1,0 +1,106 @@
+$def with (renderDict)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+ <head>
+  <title>$renderDict['name']</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <link href="/static/themes/desktop/user/css/site.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript" src="/static/themes/desktop/user/js/jquery.js"></script>
+  <script type="text/javascript" src="/static/themes/desktop/user/js/jquery.flot.js"></script>
+  <script type="text/javascript" src="/static/themes/desktop/user/js/fun.js"></script>
+ 
+  <!--[if lte IE 8]>
+  	<script language="javascript" type="text/javascript" src="/static/themes/desktop/user/js/excanvas.min.js"></script>
+  <![endif]-->
+</head>
+ <body>
+ <div id="wrap">
+ 	<div id="hd">$renderDict['name']
+    	<span id="login"><a href="#">退出</a></span>
+    </div>
+ 	<div id="left-side">
+ 		<ul>
+ 			<li><a href="#">主控面板</a></li>
+ 			<li><a href="#">页面上传</a></li>
+ 			<li><a href="#">支付</a></li>
+ 			<li><a href="#">客服</a></li>
+ 		</ul>	
+ 	</div>
+ 	<!---left side end-->
+ 	<div id="right-side">
+ 		<div class="tongji">
+ 			<div id="graphic" style=" width:660px; height:380px;">
+ 				<div id="graphic1" style=" width:660px; height:380px;">
+                	<script type="text/javascript">
+						var d1 = [];
+							for (var i = 0; i <= 60; i += 1)
+								d1.push([i, parseInt(Math.random() * 30)]);
+							var stack = 0, bars = true, lines = false, steps = true;
+							
+							function plotWithOptions() {
+								$$.plot($$("#graphic1"), [ d1 ], {
+									series: {
+										stack: stack,
+										lines: { show: lines, fill: true, steps: steps },
+										bars: { show: bars, barWidth: 0.6 }
+									}
+								});
+							}
+							plotWithOptions();
+					</script>
+ 				</div>
+ 				<div id="graphic2" style=" width:660px; height:380px;">
+                	<script type="text/javascript">
+						var d2 = [];
+							for (var i = 0; i <= 24; i += 1)
+								d2.push([i, parseInt(Math.random() * 30)]);
+							var stack = 0, bars = true, lines = false, steps = true;
+							
+							function plotWithOptions() {
+								$$.plot($$("#graphic2"), [ d2 ], {
+									series: {
+										stack: stack,
+										lines: { show: lines, fill: true, steps: steps },
+										bars: { show: bars, barWidth: 0.6 }
+									}
+								});
+							}
+							plotWithOptions();
+					</script>
+ 				</div> 
+ 				<div id="graphic3" style=" width:660px; height:380px;">
+                	<script type="text/javascript">
+						var d3 = [];
+							for (var i = 0; i <= 30; i += 1)
+								d3.push([i, parseInt(Math.random() * 30)]);
+							var stack = 0, bars = true, lines = false, steps = true;
+							
+							function plotWithOptions() {
+								$$.plot($$("#graphic3"), [ d3 ], {
+									series: {
+										stack: stack,
+										lines: { show: lines, fill: true, steps: steps },
+										bars: { show: bars, barWidth: 0.6 }
+									}
+								});
+							}
+							plotWithOptions();
+					</script>
+ 				</div> 	
+ 			</div>
+
+ 			
+ 			<div class="sort">
+ 				<span class="fl">按<a href="#" id="hour">小时</a>/<a href="#" id="day">天</a>/<a href="#" id="month">月</a></span>
+ 				<span class="fr">流量统计（小时）</span>
+ 				$renderDict['log']
+ 			</div>
+ 		</div>
+ 	</div>
+ 	<!---right side end-->
+ </div>
+ </body>
+</html>

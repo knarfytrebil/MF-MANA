@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+import os
+import web
+
+from lib.common import striptag
+from lib.common import add_class
+
+from lib.forms import Login
+
+from lib.auth import Cookie
+from modules.User import User
+
+_User = User('flame_user','sina')
+
+cookie = Cookie(_User)
+
+
+TEMPLATE_PATH = '../templates/themes/desktop/'
+THEME = 'user'
+
+SNIPPETS = {}
+SNIPPETS['strip'] = striptag
+SNIPPETS['addClass'] = add_class
+
+app_root = os.path.abspath(os.path.join('..',os.path.dirname(__file__)))
+
+templates_root = os.path.join(app_root,TEMPLATE_PATH+THEME)
+
+render = web.template.render(templates_root,globals=SNIPPETS)
+
+renderDict = {}
+
+class user:
+	def GET(self,page):
+		user = cookie.GET()
+		if user:
+			return render.main(renderDict)
+		else:
+			return web.seeother('/')

@@ -1,0 +1,49 @@
+$def with (renderDict)
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        <link rel="stylesheet" href="/static/themes/mobile/user/css/data.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="/static/themes/mobile/user/js/user.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+        <script language="javascript" type="text/javascript" src=" static/themes/mobile/user/js/jquery.flot.js"></script>
+        <script type="text/javascript">
+          function logout(){
+                  $$.cookie('uis','null',{path:'/'});
+                  window.location.replace("/")
+          };
+        </script>
+        </head>
+        <body>
+        <div data-role="page" class="type-interior">
+          <div data-role="header" data-theme="b"> <a href="main.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+            <h1>$renderDict['name']</h1>
+            <a href="/dialog.html" data-icon="close" data-rel="dialog">Close</a> 
+          </div>
+            <!--role-header end-->
+          <div data-role="content">
+          	<ul data-role="listview" id="bill">
+            	<li data-theme="b"><a>日期</a><span class="ui-li-count">金额</span></li>
+              $for balance in renderDict['balances']:
+            	<li><a>$balance.time</a><span class="ui-li-count">$balance.value</span></li>
+                <li data-theme="b"><a>余额</a><span class="ui-li-count">$renderDict['left']</span></li>
+			</ul>
+          </div>
+          <!--role-content end-->
+          <div data-role="footer" data-theme="b" id="footer" data-position="fixed">
+            <div data-role="navbar">
+              <ul>
+                <li><a href="main.html" data-icon="home" data-transition="flip">主控面板</a></li>
+                <!--<li><a href="login.html" data-icon="star" data-transition="flip">页面上传</a></li>-->
+                <li><a href="account.html" data-icon="gear" data-transition="flip">我的账户</a></li>
+                <!--<li><a href="login.html" data-icon="grid" data-transition="flip">售后服务</a></li>-->
+              </ul>
+            </div>
+          </div>
+          <!--role-footer end-->
+        </div>
+</body>
+</html>

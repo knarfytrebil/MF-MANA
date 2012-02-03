@@ -1,0 +1,31 @@
+$def with (renderDict)
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>$renderDict['name']</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        <link rel="stylesheet" href="/static/themes/mobile/user/css/data.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="/static/themes/mobile/js/user.js"></script>
+        <script src="/static/themes/desktop/user/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+        <script language="javascript" type="text/javascript" src="/static/themes/mobile/js/jquery.flot.js"></script>
+        </head>
+<body>
+<div data-role="page">
+		<div data-role="header" data-theme="b">
+			<h1>$renderDict['name']</h1>
+		</div>
+		<div data-role="content" data-theme="c">
+			<h1>您确认要退出$renderDict['name']吗?</h1>
+			<p>提示：退出后您可能要重新登录$renderDict['name']界面！</p>
+            <div data-inline="true">
+                <a href="javascript:logout();" data-role="button" data-direction="reverse" data-theme="b">确认</a>       
+                <a href="/main.html" data-role="button" data-rel="back" data-theme="c">取消</a>
+            </div>
+		</div>
+	</div>
+</body>
+</html>

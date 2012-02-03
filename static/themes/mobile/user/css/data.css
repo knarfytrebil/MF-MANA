@@ -1,0 +1,38 @@
+#box{ width:60%; margin:0 auto;}
+#box label{ display: block;}
+#box div div{ float: left;}
+#box_2,#box_3,#box_4{ width:100%; margin:0 auto;}
+.local-data{ text-align:center; margin-top:15px;}
+.local-data .ui-btn-inner{ padding:4px 12px;}
+#chart { position:relative;}
+#chart .chart{ margin:0 auto;  }
+#footer .ui-btn{ font-family:"microsoft yahei";}
+#ui-select-box{ text-align:center;}
+#ui-select-box a{ display:inline-block;}
+#ui-select-box .ui-btn-inner{ padding:4px 25px;}
+
+/**ui-data***/
+#ui-data{ position:absolute; top:0; right:0; }
+#ui-data .ui-btn-inner{ padding:4px 14px;}
+#ui-data .ui-btn{ font:normal 12px "microsoft yahei";}
+
+/****bill***/
+#bill{ margin-top:10px;}
+#bill .ui-btn-text{ font-family:"microsoft yahei";}
+#bill a.ui-link-inherit{ padding:5px 15px;}
+/**--Media query function-***/
+@media only screen and (max-width: 300px), only screen and (max-device-width: 300px) {  
+	#chart .chart{ width:260px; height:180px;}
+} 
+@media only screen and (max-width: 400px), only screen and (max-device-width: 400px) {  
+	#chart .chart{ width:300px; height:200px;}
+}    
+@media only screen and (max-width: 680px), only screen and (max-device-width: 680px) {  
+	#chart .chart{ width:300px; height:200px;}
+}
+@media only screen and (max-width: 980px), only screen and (max-device-width: 980px) {  
+	#chart .chart{ width:800px; height:400px;}
+} 
+@media only screen and (max-width: 1440px), only screen and (max-device-width: 1200px) {  
+	#chart .chart{ width:1000px; height:500px;}
+} 

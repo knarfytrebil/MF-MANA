@@ -1,0 +1,106 @@
+$def with (renderDict)
+<!DOCTYPE html>
+<html>
+        <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>$renderDict['name']</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        <link rel="stylesheet" href="/static/themes/mobile/user/css/data.css" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+        <script src="/static/themes/desktop/user/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+        <script language="javascript" type="text/javascript" src="/static/themes/mobile/user/js/jquery.flot.js"></script>
+        <script type="text/javascript">
+        $$(document).ready(function() {
+          $for page in renderDict['pages']:
+            $$('#$page['name']-g2').hide();
+            $$('#$page['name']-day').click(function(){
+              $$('#$page['name']-g1').slideDown();
+              $$('#$page['name']-g2').slideUp();
+            });
+            $$('#$page['name']-month').click(function(){
+              $$('#$page['name']-g2').slideDown();
+              $$('#$page['name']-g1').slideUp();
+            });
+          });
+          function logout(){
+                  $$.cookie('uis', null);
+                  window.location.replace("/")
+          };
+          </script>
+        </head>
+        <body>
+        <div data-role="page" class="type-interior">
+          <div data-role="header" data-theme="b"> <a href="main.html" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a>
+            <h1>$renderDict['name']</h1>
+            <a href="dialog.html" data-icon="close" data-rel="dialog">Close</a> </div>
+            <!--role-header end-->
+          <div data-role="content">
+            <div data-role="controlgroup" data-type="horizontal" id="ui-select-box">
+                <a href="javascript:;void()" id="ui-select-one" data-role="button" data-theme="d">$page['name']</a>
+			     </div>
+           $for page in renderDict['pages']:
+            <div id="box_2" n data-role="content-primary">
+                <div class="content-primary" id="chart">
+                    <div  data-role="controlgroup" id="ui-data">
+                        <a data-role="button" data-theme="b">本日流量:$page['d']</a>
+                        <a data-role="button" data-theme="b">本月流量:$page['m']</a>
+                    </div>
+                  <div id="$page['name']-g1" class="chart"> 
+                       <script type="text/javascript">
+                        var d1 = $page['log']
+                        var stack = 0, bars = 0, lines = 1, steps = 0, points = 1;
+                        
+                        function plotWithOptions() {
+                          $$.plot($$("#$page['name']-g1"), [ { data: d1, label: "今天的流量", color: "#333" } ], {
+                            series: {
+                              stack: stack,
+                              lines: { show: lines, fill: true, steps: steps },
+                              bars: { show: bars, barWidth: 0.6 },
+                              points: { show: points }
+                            }
+                          });
+                        }
+                        plotWithOptions();
+                    </script> 
+                  </div>
+                  <div id="$page['name']-g2" class="chart"> 
+                    <script type="text/javascript">
+                        var d2 = $page['mlog'];
+                        var stack = 0, bars = true, lines = false, steps = true;
+                        
+                        function plotWithOptions() {
+                          $$.plot($$("#$page['name']-g2"), [ { data: d2, label: "本月流量", color: "#333" } ], {
+                            series: {
+                              stack: stack,
+                              lines: { show: lines, fill: true, steps: steps },
+                              bars: { show: bars, barWidth: 0.6 }
+                            }
+                          });
+                        }
+                        plotWithOptions();
+                    </script> 
+                  </div>
+                </div>
+                <div data-role="controlgroup" data-type="horizontal" class="local-data" > <a href="javascript:;void(0)" data-role="button" id="$page['name']-month">Month</a> <a href="javascript:;void(0)" data-role="button" id="$page['name']-day">Day</a> </div>
+                <!--select btn end--> 
+              </div>
+              <!--box_2 end-->
+             
+          </div>
+          <!--role-content end-->
+          <div data-role="footer" data-theme="b" id="footer" data-position="fixed">
+            <div data-role="navbar">
+              <ul>
+                <li><a href="/main.html" data-icon="home" class="ui-btn-active" data-transition="flip">主控面板</a></li>
+                <!--<li><a href="login.html" data-icon="star" data-transition="flip">页面上传</a></li>-->
+                <li><a href="/user/balance/" data-icon="gear" data-transition="flip">我的账户</a></li>
+                <!--<li><a href="login.html" data-icon="grid" data-transition="flip">售后服务</a></li>-->
+              </ul>
+            </div>
+          </div>
+         <!--role-footer end-->
+        </div>
+</body>
+</html>
