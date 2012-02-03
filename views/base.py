@@ -6,7 +6,7 @@ class View():
 	def __init__(self):
 		self.render = ""
 	
-	def render_is(v,THEME):
+	def render_is(self,v,THEME):
 		TEMPLATE_PATH = '../templates/themes/%s/' % v
 		THEME = 'user'
 		SNIPPETS = {}
