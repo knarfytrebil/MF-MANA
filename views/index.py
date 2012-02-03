@@ -48,7 +48,7 @@ class index:
 		renderDict = {}
 		user = cookie.GET()
 		if user:
-			return web.seeother('/user/chart')
+			return web.seeother('/user/briefing')
 		else:
 			title = "hello"
 			renderDict = {'login':Login(),'name':'Stranger','title':title}

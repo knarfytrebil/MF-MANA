@@ -45,6 +45,7 @@ class user:
 		user = cookie.GET()
 		if user:
 			renderDict['user'] = user
+			renderDict['path'] = "/static/themes/%s/%s" % (v,THEME)
 			if page == "balance":
 				return self.balance
 			if page == "analyse":
