@@ -4,47 +4,28 @@ import web
 
 from lib.common import striptag
 from lib.common import add_class
-
 from lib.forms import Login
-
 from lib.auth import Cookie
+from views.base import View
+
 from modules.User import User
-from lib import httpagentparser as UA_Parser
+
 
 _User = User('flame_user')
 
 cookie = Cookie(_User)
 
-v = ""
-render = ''
+SNIPPETS = {}
+SNIPPETS['strip'] = striptag
+SNIPPETS['addClass'] = add_class
 
-def render_is(v):
-	TEMPLATE_PATH = '../templates/themes/%s/' % v
-	THEME = 'user'
-	SNIPPETS = {}
-	SNIPPETS['strip'] = striptag
-	SNIPPETS['addClass'] = add_class
-	app_root = os.path.abspath(os.path.join('..',os.path.dirname(__file__)))
-	templates_root = os.path.join(app_root,TEMPLATE_PATH+THEME)
-	return web.template.render(templates_root,globals=SNIPPETS)
-
-desktop = ['Linux','Windows','Macintosh','MacOS']
-
+THEME = "user"
 renderDict = {}
 
 class index:
 	def GET(self):
-		try:
-			s = web.ctx.env['HTTP_USER_AGENT']
-		except KeyError:
-			s = "Unknown"
-		os = UA_Parser.simple_detect(s)
-		print os[0].split(' ')[0]
-		if os[0].split(' ')[0] not in desktop:
-			v = 'mobile'
-		else:
-			v = 'desktop'
-		render = render_is(v)
+		v = self.agent_type()
+		self.render = self.render_is(v,THEME,SNIPPETS)
 		renderDict = {}
 		user = cookie.GET()
 		if user:
@@ -52,7 +33,7 @@ class index:
 		else:
 			title = "hello"
 			renderDict = {'login':Login(),'name':'Stranger','title':title}
-			return render.login(renderDict)
+			return self.render.login(renderDict)
 
 	def POST(self):
 		login = Login()
