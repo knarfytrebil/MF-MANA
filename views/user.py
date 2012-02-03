@@ -2,6 +2,7 @@
 import os
 import web
 
+from views.base import View
 from lib.common import striptag
 from lib.common import add_class
 
@@ -13,11 +14,6 @@ from lib import httpagentparser as UA_Parser
 _User = User('flame_user','local')
 
 cookie = Cookie(_User)
-
-
-v = "desktop"
-render = ''
-THEME = ""
 
 def render_is(v):
 	TEMPLATE_PATH = '../templates/themes/%s/' % v
@@ -32,7 +28,8 @@ def render_is(v):
 desktop = ['Linux','Windows','Macintosh','MacOS']
 renderDict = {}
 
-class user:
+class user(View):
+
 	def GET(self,page):
 		try:
 			s = web.ctx.env['HTTP_USER_AGENT']
@@ -44,7 +41,7 @@ class user:
 			v = 'mobile'
 		else:
 			v = 'desktop'
-		render = render_is(v)
+		self.render = render_is(v)
 		user = cookie.GET()
 		if user:
 			renderDict['user'] = user
@@ -59,15 +56,13 @@ class user:
 			return web.seeother('/')
 	
 	def balance(self):
-		render = render_is(v)
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
 		renderDict['balances'] = balance.ShowAll(renderDict['user'].id)
 		renderDict['left'] = balance.Left(renderDict['user'].id)
-		return render.balance(renderDict)
+		return self.render.balance(renderDict)
 	
 	def chart(self):
-		render = render_is(v)
 		from modules.Record import Record
 		record = Record('flame_record','local')
 		import datetime
@@ -87,12 +82,11 @@ class user:
 			page['name'] = item
 			renderDict['pages'].append(page)
 		renderDict['name'] = renderDict['user'].nick
-		return render.main(renderDict)
+		return self.render.main(renderDict)
 	
 	def briefing(self):
-		render = render_is(v)
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
 		renderDict['left'] = balance.Left(renderDict['user'].id)
-		return render.briefing(renderDict)
+		return self.render.briefing(renderDict)
