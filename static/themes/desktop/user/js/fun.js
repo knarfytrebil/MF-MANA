@@ -1,11 +1,24 @@
-$(document).ready(function() {
-    $('#graphic2').hide();
-	$('#day').click(function(){
-			$('#graphic1').show();
-			$('#graphic2').hide();
-		});
-	$('#month').click(function(){
-		$('#graphic2').show();
-		$('#graphic1').hide();
-	});
-});
+﻿// JavaScript Document
+function switchTab(identify,index,count,cnon,cnout) {
+    for(i=0;i<count;i++) {
+        var CurTabObj = document.getElementById("Tab_"+identify+"_"+i) ;
+        var CurListObj = document.getElementById("List_"+identify+"_"+i) ;
+        if (i != index) {
+            CurTabObj.className=cnout ;
+            CurListObj.style.display="none" ;
+        }
+    }
+    //try {
+//        for (ind=0;ind<CachePic['recommend'][index].length ;ind++ ) {
+//            var picobj = document.getElementById("recommend_pic_"+index+"_"+ind) ;
+//            //if (picobj.src == "http://localhost/images/img_default.gif") {
+//                picobj.src = CachePic['recommend'][index][ind] ;
+//            //}
+//        }
+//    }
+//    catch (e) {}
+//    
+    document.getElementById("Tab_"+identify+"_"+index).className=cnon ;
+    document.getElementById("List_"+identify+"_"+index).style.display="";
+}
+
