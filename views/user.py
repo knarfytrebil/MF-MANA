@@ -42,7 +42,7 @@ class user(View):
 			v = 'mobile'
 		else:
 			v = 'desktop'
-		self.render = render_is(v)
+		self.render = self.render_is(v,THEME)
 		user = cookie.GET()
 		if user:
 			renderDict['user'] = user
