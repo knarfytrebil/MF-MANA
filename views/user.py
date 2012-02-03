@@ -18,24 +18,13 @@ SNIPPETS['strip'] = striptag
 SNIPPETS['addClass'] = add_class
 
 cookie = Cookie(_User)
-
-desktop = ['Linux','Windows','Macintosh','MacOS']
 renderDict = {}
 THEME = 'user'
 
 class user(View):
 
 	def GET(self,page):
-		try:
-			s = web.ctx.env['HTTP_USER_AGENT']
-		except KeyError:
-			s = "Unknown"
-		os = UA_Parser.simple_detect(s)
-		print os[0].split(' ')[0]
-		if os[0].split(' ')[0] not in desktop:
-			v = 'mobile'
-		else:
-			v = 'desktop'
+		v = self.agent_type()
 		self.render = self.render_is(v,THEME,SNIPPETS)
 		user = cookie.GET()
 		if user:
