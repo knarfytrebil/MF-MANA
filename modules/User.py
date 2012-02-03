@@ -16,6 +16,10 @@ class User(Base):
 		except:
 			return 0
 		if password == ui.password:
+			import datetime
+			now = datetime.datetime.now()
+			w = "WHERE name=%s" % username
+			self.sdb.update(self.table,w=w,date_login=now)
 			return ui
 		else:
 			return 0
