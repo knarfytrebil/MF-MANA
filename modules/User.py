@@ -18,7 +18,7 @@ class User(Base):
 		if password == ui.password:
 			import datetime
 			now = datetime.datetime.now()
-			w = "WHERE name=%s" % username
+			w = "WHERE name='%s'" % username
 			self.sdb.update(self.table,where=w,date_login=now)
 			return ui
 		else:
