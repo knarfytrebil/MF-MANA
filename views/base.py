@@ -13,6 +13,7 @@ class View():
 		return web.template.render(templates_root,globals=SNIPPETS)
 	
 	def agent_type(self):
+		from lib import httpagentparser as UA_Parser
 		desktop = ['Linux','Windows','Macintosh','MacOS']
 		try:
 			s = web.ctx.env['HTTP_USER_AGENT']

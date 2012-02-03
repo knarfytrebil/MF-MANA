@@ -10,7 +10,7 @@ from lib.forms import Login
 
 from lib.auth import Cookie
 from modules.User import User
-from lib import httpagentparser as UA_Parser
+
 _User = User('flame_user','local')
 
 SNIPPETS = {}
