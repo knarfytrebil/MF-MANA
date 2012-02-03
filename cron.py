@@ -39,5 +39,7 @@ for u in USERS:
 			s = 0
 			l = balance.Left(u.id)
 			t = balance.Total(u.id)
+			used = t - l
+			rate = used / t * 100
 			if l > 0:s = 1
-			user._set(u.id,status=StatusDict[s],balance_left=l,balance_total=t)
+			user._set(u.id,status=StatusDict[s],balance_left=l, balance_total=t, balance_used = used, balance_rate = rate)
