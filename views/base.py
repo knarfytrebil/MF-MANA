@@ -1,7 +1,7 @@
 import os
 import web
 
-class view():
+class View():
 	"""docstring for ClassName"""
 	def __init__(self):
 		self.render = ""
