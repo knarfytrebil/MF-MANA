@@ -18,7 +18,6 @@ cookie = Cookie(_User)
 v = "desktop"
 render = ''
 THEME = ""
-global render
 
 def render_is(v):
 	TEMPLATE_PATH = '../templates/themes/%s/' % v
@@ -60,6 +59,7 @@ class user:
 			return web.seeother('/')
 	
 	def balance(self):
+		render = render_is(v)
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
 		renderDict['balances'] = balance.ShowAll(renderDict['user'].id)
@@ -67,6 +67,7 @@ class user:
 		return render.balance(renderDict)
 	
 	def chart(self):
+		render = render_is(v)
 		from modules.Record import Record
 		record = Record('flame_record','local')
 		import datetime
@@ -89,6 +90,7 @@ class user:
 		return render.main(renderDict)
 	
 	def briefing(self):
+		render = render_is(v)
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
