@@ -13,17 +13,11 @@ from modules.User import User
 from lib import httpagentparser as UA_Parser
 _User = User('flame_user','local')
 
-cookie = Cookie(_User)
+SNIPPETS = {}
+SNIPPETS['strip'] = striptag
+SNIPPETS['addClass'] = add_class
 
-def render_is(v):
-	TEMPLATE_PATH = '../templates/themes/%s/' % v
-	THEME = 'user'
-	SNIPPETS = {}
-	SNIPPETS['strip'] = striptag
-	SNIPPETS['addClass'] = add_class
-	app_root = os.path.abspath(os.path.join('..',os.path.dirname(__file__)))
-	templates_root = os.path.join(app_root,TEMPLATE_PATH+THEME)
-	return web.template.render(templates_root,globals=SNIPPETS)
+cookie = Cookie(_User)
 
 desktop = ['Linux','Windows','Macintosh','MacOS']
 renderDict = {}
@@ -42,7 +36,7 @@ class user(View):
 			v = 'mobile'
 		else:
 			v = 'desktop'
-		self.render = self.render_is(v,THEME)
+		self.render = self.render_is(v,THEME,SNIPPETS)
 		user = cookie.GET()
 		if user:
 			renderDict['user'] = user
