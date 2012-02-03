@@ -17,6 +17,8 @@ cookie = Cookie(_User)
 
 v = "desktop"
 render = ''
+THEME = ""
+
 def render_is(v):
 	TEMPLATE_PATH = '../templates/themes/%s/' % v
 	THEME = 'user'
