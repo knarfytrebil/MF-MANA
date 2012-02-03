@@ -48,9 +48,9 @@ $def with (renderDict)
                     <div class="disk-info"><i class="icon"></i>
                         <div class="con">
                             <strong>我的帐户</strong>
-                            <em>（已使用renderdict['user'].balance_used元，共renderdict['user'].balance_total元，使用率renderdict['user'].balance_rate%）</em>
+                            <em>（已使用renderdict['user'].balance_used元，共$renderdict['user'].balance_total元，使用率renderdict['user'].balance_rate%）</em>
                         </div>
-                        <div id="progressBar" class="space-status" title="已使用renderdict['user'].balance_used元，共renderdict['user'].balance_total元，使用率renderdict['user'].balance_rate%">
+                        <div id="progressBar" class="space-status" title="已使用renderdict['user'].balance_used元，共$renderdict['user'].balance_total元，使用率renderdict['user'].balance_rate%">
                             <i id="progressBar-info" style="width:renderdict['user'].balance_rate%;"></i>
                         </div>
                     </div>
@@ -60,11 +60,11 @@ $def with (renderDict)
                     <div class="user-info-box">
                         <div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">$renderDict['user'].nick</a>
                             <ul class="user-approve">
-                                <li><a href="#">renderdict['user'].date_login</a></li>
+                                <li><a href="#">$renderdict['user'].date_login</a></li>
                             </ul>
                         </div>
                         <ul class="user-info-list">
-                            <li><em>开通日期：</em><span>renderdict['user'].date_registered</span></li>
+                            <li><em>开通日期：</em><span>$renderdict['user'].date_registered</span></li>
                             <li><em>开通流量：</em><span>20000</span></li>
                             <li><em>使用流量：</em><span>10000</span></li>
                             <li><em>流量剩余：</em><span>10000</span></li>
