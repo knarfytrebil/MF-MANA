@@ -27,6 +27,7 @@ def render_is(v):
 
 desktop = ['Linux','Windows','Macintosh','MacOS']
 renderDict = {}
+THEME = 'user'
 
 class user(View):
 
