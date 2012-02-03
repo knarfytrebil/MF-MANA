@@ -48,10 +48,10 @@ $def with (renderDict)
                     <div class="disk-info"><i class="icon"></i>
                         <div class="con">
                             <strong>我的帐户</strong>
-                            <em>（已使用renderdict['user'].balance_used元，共$renderDict['user'].balance_total元，使用率renderict['user'].balance_rate%）</em>
+                            <em>（已使用$renderDict['user'].balance_used元，共$renderDict['user'].balance_total元，使用率$renderDict['user'].balance_rate%）</em>
                         </div>
-                        <div id="progressBar" class="space-status" title="已使用renderdict['user'].balance_used元，共$renderDict['user'].balance_total元，使用率renderdict['user'].balance_rate%">
-                            <i id="progressBar-info" style="width:renderdict['user'].balance_rate%;"></i>
+                        <div id="progressBar" class="space-status" title="已使用$renderDict['user'].balance_used元，共$renderDict['user'].balance_total元，使用率$renderDict['user'].balance_rate%">
+                            <i id="progressBar-info" style="width: $renderDict['user'].balance_rate%;"></i>
                         </div>
                     </div>
                 </div>
