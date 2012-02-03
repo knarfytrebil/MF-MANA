@@ -19,7 +19,7 @@ class User(Base):
 			import datetime
 			now = datetime.datetime.now()
 			w = "WHERE name=%s" % username
-			self.sdb.update(self.table,w=w,date_login=now)
+			self.sdb.update(self.table,where=w,date_login=now)
 			return ui
 		else:
 			return 0
