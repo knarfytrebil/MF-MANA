@@ -49,11 +49,11 @@ class user:
 			renderDict['user'] = user
 			renderDict['path'] = "/static/themes/%s/%s" % (v,THEME)
 			if page == "balance":
-				return self.balance
+				return self.balance()
 			if page == "analyse":
-				return self.chart
+				return self.chart()
 			if page == "briefing":
-				return self.briefing
+				return self.briefing()
 		else:
 			return web.seeother('/')
 	
