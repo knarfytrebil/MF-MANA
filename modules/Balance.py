@@ -39,3 +39,10 @@ class Balance(Base):
 		for balance in balances:
 			b += balance.value
 		return b
+	
+	def Total(self,UserId):
+		data = self._where("value","value > 0 AND user = %s" % UserId)
+		t = 0
+		for item in data:
+			t += item.value
+		return t

@@ -29,6 +29,11 @@ class Base():
 			return self.sdb.query(SQL % PARA)[0].id
 		except IndexError:
 			return 0
+	
+	def _where(self,key,w):
+		SQL = 'SELECT %s FROM %s WHERE %s'
+		PARA = (key,self.table,w)
+		return self.sdb.query(SQL % PARA)
 		
 	def show(self,number,order):
 		return self.sdb.select(self.table, limit=number, order=order)

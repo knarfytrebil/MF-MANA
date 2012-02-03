@@ -48,26 +48,7 @@ class index:
 		renderDict = {}
 		user = cookie.GET()
 		if user:
-			from modules.Record import Record
-			record = Record('flame_record','local')
-			import datetime
-			d = datetime.date.today()
-			strd = datetime.datetime.strftime(d, "%Y-%m-%d")
-			strm = datetime.datetime.strftime(d, "%Y-%m")
-			renderDict['pages'] = []
-			PageList = user.list.split(',')
-			for item in PageList:
-				page = {}
-				d_data = record.Get(strd,item,'day')
-				m_data = record.Get(strm,item,'month')
-				page['log'] = d_data[0]
-				page['mlog'] = m_data[0]
-				page['d'] = d_data[1]
-				page['m'] = m_data[1]
-				page['name'] = item
-				renderDict['pages'].append(page)
-			renderDict['name'] = user.nick
-			return render.main(renderDict)
+			return web.seeother('/user/chart')
 		else:
 			title = "hello"
 			renderDict = {'login':Login(),'name':'Stranger','title':title}

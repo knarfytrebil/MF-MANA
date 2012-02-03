@@ -44,12 +44,48 @@ class user:
 		render = render_is(v)
 		user = cookie.GET()
 		if user:
+			renderDict['user'] = user
 			if page == "balance":
-				from modules.Balance import Balance
-				balance = Balance('flame_balance','local')
-				renderDict['name'] = user.nick
-				renderDict['balances'] = balance.ShowAll(user.id)
-				renderDict['left'] = balance.Left(user.id)
-				return render.balance(renderDict)
+				return self.balance
+			if page == "analyse":
+				return self.chart
+			if page == "briefing":
+				return self.briefing
 		else:
 			return web.seeother('/')
+	
+	def balance(self):
+		from modules.Balance import Balance
+		balance = Balance('flame_balance','local')
+		renderDict['balances'] = balance.ShowAll(user.id)
+		renderDict['left'] = balance.Left(user.id)
+		return render.balance(renderDict)
+	
+	def chart(self):
+		from modules.Record import Record
+		record = Record('flame_record','local')
+		import datetime
+		d = datetime.date.today()
+		strd = datetime.datetime.strftime(d, "%Y-%m-%d")
+		strm = datetime.datetime.strftime(d, "%Y-%m")
+		renderDict['pages'] = []
+		PageList = user.list.split(',')
+		for item in PageList:
+			page = {}
+			d_data = record.Get(strd,item,'day')
+			m_data = record.Get(strm,item,'month')
+			page['log'] = d_data[0]
+			page['mlog'] = m_data[0]
+			page['d'] = d_data[1]
+			page['m'] = m_data[1]
+			page['name'] = item
+			renderDict['pages'].append(page)
+		renderDict['name'] = user.nick
+		return render.main(renderDict)
+	
+	def briefing(self):
+		from modules.Balance import Balance
+		balance = Balance('flame_balance','local')
+		renderDict['total'] = balance.Total(user.id)
+		renderDict['left'] = balance.Left(user.id)
+		return render.briefing(renderDict)
