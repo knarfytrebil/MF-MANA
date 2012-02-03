@@ -28,6 +28,7 @@ def render_is(v):
 	app_root = os.path.abspath(os.path.join('..',os.path.dirname(__file__)))
 	templates_root = os.path.join(app_root,TEMPLATE_PATH+THEME)
 	return web.template.render(templates_root,globals=SNIPPETS)
+
 desktop = ['Linux','Windows','Macintosh','MacOS']
 renderDict = {}
 
@@ -60,8 +61,8 @@ class user:
 	def balance(self):
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
-		renderDict['balances'] = balance.ShowAll(user.id)
-		renderDict['left'] = balance.Left(user.id)
+		renderDict['balances'] = balance.ShowAll(renderDict['user'].id)
+		renderDict['left'] = balance.Left(renderDict['user'].id)
 		return render.balance(renderDict)
 	
 	def chart(self):
@@ -72,7 +73,7 @@ class user:
 		strd = datetime.datetime.strftime(d, "%Y-%m-%d")
 		strm = datetime.datetime.strftime(d, "%Y-%m")
 		renderDict['pages'] = []
-		PageList = user.list.split(',')
+		PageList = renderDict['user'].list.split(',')
 		for item in PageList:
 			page = {}
 			d_data = record.Get(strd,item,'day')
@@ -83,12 +84,12 @@ class user:
 			page['m'] = m_data[1]
 			page['name'] = item
 			renderDict['pages'].append(page)
-		renderDict['name'] = user.nick
+		renderDict['name'] = renderDict['user'].nick
 		return render.main(renderDict)
 	
 	def briefing(self):
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')
-		renderDict['total'] = balance.Total(user.id)
-		renderDict['left'] = balance.Left(user.id)
+		renderDict['total'] = balance.Total(renderDict['user'].id)
+		renderDict['left'] = balance.Left(renderDict['user'].id)
 		return render.briefing(renderDict)
