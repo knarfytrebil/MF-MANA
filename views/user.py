@@ -37,6 +37,8 @@ class user(View):
 				return self.chart()
 			if page == "briefing":
 				return self.briefing()
+			if page == "upload":
+				return self.upload()
 		else:
 			return web.seeother('/')
 	
