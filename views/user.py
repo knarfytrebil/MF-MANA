@@ -73,4 +73,18 @@ class user(View):
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
 		renderDict['left'] = balance.Left(renderDict['user'].id)
+		PageList = renderDict['user'].list.split(',')
+		renderDict['pages'] = []
+		for item in PageList:
+			page = {}
+			d_data = record.Get(strd,item,'day')
+			m_data = record.Get(strm,item,'month')
+			page['log'] = d_data[0]
+			page['d'] = d_data[1]
+			page['m'] = m_data[1]
+			page['name'] = item
+			renderDict['pages'].append(page)
 		return self.render.briefing(renderDict)
+	
+	def upload(self):
+		return self.render.upload(renderDict)
