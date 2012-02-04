@@ -20,7 +20,7 @@ class Balance(Base):
 		import datetime
 		ds = datetime.datetime.strptime("%s 00:00:00" % day, "%Y-%m-%d %H:%M:%S")
 		de = datetime.datetime.strptime("%s 23:59:59" % day, "%Y-%m-%d %H:%M:%S")
-		SQL = "SELECT id FROM %s WHERE page = %s AND user=%s AND value < 0 AND time >= '%s' AND time <= '%s'"
+		SQL = "SELECT id FROM %s WHERE page = '%s' AND user=%s AND value < 0 AND time >= '%s' AND time <= '%s'"
 		PARA = (self.table,page,uid,ds,de)
 		x = self.sdb.query(SQL % PARA)
 		r = len(x)
