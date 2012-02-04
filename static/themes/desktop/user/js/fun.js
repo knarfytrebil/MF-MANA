@@ -24,7 +24,7 @@ function switchTab(identify,index,count,cnon,cnout) {
 
 //Chart switch Event 
 function plot_overview(class_id,data){
-    $.plot($(class_id), data, {
+    $.plot($(class_id), [data], {
         series: {
             bars: { show: true },
             shadowSize: 0
