@@ -10,7 +10,6 @@ $def with (renderDict)
     <link href="$renderDict['path']/css/tipTip.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
-    <script type="text/javascript" src="$renderDict['path']/js/user.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.tipTip.js"></script>
 </head>
@@ -71,7 +70,7 @@ $def with (renderDict)
                                     $$(function(){
                                         $$("#$page['name']").tipTip({content:"本日流量:$page['d']",defaultPosition:'right'});
                                     });
-                                    plot_overview("#$page['name']");
+                                    plot_overview("#$page['name']",$page['log']);
                                 </script>
                             </div>
                         </div>
