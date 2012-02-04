@@ -56,3 +56,10 @@ def decrypt(s):
 		r.append(i)
 	r.reverse()
 	return decode("".join(r))
+
+def DayAndMonth():
+	import datetime
+	d = datetime.date.today()
+	strd = datetime.datetime.strftime(d, "%Y-%m-%d")
+	strm = datetime.datetime.strftime(d, "%Y-%m")
+	return strd,strm

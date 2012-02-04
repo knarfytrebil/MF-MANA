@@ -5,6 +5,7 @@ import web
 from views.base import View
 from lib.common import striptag
 from lib.common import add_class
+from lib.common import DayAndMonth
 
 from lib.forms import Login
 
@@ -49,10 +50,9 @@ class user(View):
 	def chart(self):
 		from modules.Record import Record
 		record = Record('flame_record','local')
-		import datetime
-		d = datetime.date.today()
-		strd = datetime.datetime.strftime(d, "%Y-%m-%d")
-		strm = datetime.datetime.strftime(d, "%Y-%m")
+		DM = DayAndMonth()
+		strd = DM[0]
+		strm = DM[1]
 		renderDict['pages'] = []
 		PageList = renderDict['user'].list.split(',')
 		for item in PageList:
@@ -71,6 +71,9 @@ class user(View):
 	def briefing(self):
 		from modules.Balance import Balance
 		from modules.Record import Record
+		DM = DayAndMonth()
+		strd = DM[0]
+		strm = DM[1]
 		record = Record('flame_record','local')
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
