@@ -51,11 +51,15 @@ $def with (renderDict)
                 <div class="col-main col-index">
                     <div class="chart-bd">
                         <div class="chart-tit">
-                            <h1>流量数据</h1>
+                            <h1>流量分析</h1>
                             <ul id="chart-tab">
-                                <li class="set Lotus" id="Tab_aa_0" onclick="switchTab('aa',0,3,'set','')">Lotus</li>
-                                <li id="Tab_aa_1" class="Kurogal" onclick="switchTab('aa',1,3,'set','')">Kurogal</li>
-                                <li id="Tab_aa_2" class="Kurogal" onclick="switchTab('aa',2,3,'set','')">Reg_Jidai</li>
+                            $for page in renderDict['pages']:
+                                <li class="
+                                $if $page['index'] == 0:
+                                	set Lotus
+                                $else:
+                                	Kurogal
+                                " id="Tab_aa_$page['index']" onclick="switchTab('aa',$page['index'],3,'set','')">$page['name']</li>
                             </ul>
                         </div>
                         <div class="chart-tab">

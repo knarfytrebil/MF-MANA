@@ -60,15 +60,18 @@ class user(View):
 		strm = DM[1]
 		renderDict['pages'] = []
 		PageList = renderDict['user'].list.split(',')
+		index = 0
 		for item in PageList:
 			page = {}
 			d_data = record.Get(strd,item,'day')
 			m_data = record.Get(strm,item,'month')
+			page['index'] = index
 			page['log'] = d_data[0]
 			page['mlog'] = m_data[0]
 			page['d'] = d_data[1]
 			page['m'] = m_data[1]
 			page['name'] = item
+			index += 1
 			renderDict['pages'].append(page)
 		renderDict['name'] = renderDict['user'].nick
 		return self.render.main(renderDict)
@@ -85,14 +88,17 @@ class user(View):
 		renderDict['left'] = balance.Left(renderDict['user'].id)
 		PageList = renderDict['user'].list.split(',')
 		renderDict['pages'] = []
+		index = 0
 		for item in PageList:
 			page = {}
 			d_data = record.Get(strd,item,'day')
 			m_data = record.Get(strm,item,'month')
+			page['index'] = index
 			page['log'] = d_data[0]
 			page['d'] = d_data[1]
 			page['m'] = m_data[1]
 			page['name'] = item
+			index += 1
 			renderDict['pages'].append(page)
 		return self.render.briefing(renderDict)
 	
