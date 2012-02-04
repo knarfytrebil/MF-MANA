@@ -54,12 +54,15 @@ $def with (renderDict)
 							<h1>流量分析</h1>
 							<ul id="chart-tab">
 							$for page in renderDict['pages']:
-								<li class="" id="Tab_aa_$page['index']" onclick="switchTab('aa',$page['index'],3,'set','')">$page['name']</li>
+								<li class="" id="Tab_aa_$loop.index" onclick="switchTab('aa',$loop.index,3,'set','')">$page['name']</li>
 							</ul>
 						</div>
 						<div class="chart-tab">
 						$for page in renderDict['pages']:
-							<div id="List_aa_$page['index']" class="chart-Lotus chart">
+							<div id="List_aa_$loop.index" class="chart-Lotus chart" 
+							$if loop.index:
+								style="display: none;"
+							>
 								<ul class="chart-display clearfix">
 									<li id="List_$page['name']_0">
 										$page['name'] 1
