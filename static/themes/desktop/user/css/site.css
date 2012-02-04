@@ -398,7 +398,6 @@ li {
     font-style: normal;
 }
 .data-chart{
-    position: absolute;
     right:15px;
     top:8px;
     width:100px;
