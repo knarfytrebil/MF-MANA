@@ -34,3 +34,13 @@ function plot_overview(class_id,data){
         yaxis: { ticks: [], min: 0, autoscaleMargin: 0.1 }
     });
 }
+
+//Big Plot
+function plot_big(class_id,data){
+    var options = {
+        xaxis: { mode: "time", tickLength: 5 },
+        selection: { mode: "x" },
+        grid: { markings: weekendAreas }
+    };
+    var plot = $.plot($(class_id), [data], options);
+}
