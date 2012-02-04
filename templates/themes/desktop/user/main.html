@@ -57,12 +57,12 @@ $def with (renderDict)
 								<li class="
 								$if loop.first:
 									set
-								" id="Tab_$page['name']_$loop.index" onclick="switchTab('$page['name']',$loop.index,3,'set','');">$page['name']</li>
+								" id="Tab_$page['name']_$loop.index" onclick="switchTab('out',$loop.index0,$loop.last,'set','');">$page['name']</li>
 							</ul>
 						</div>
 						<div class="chart-tab">
 						$for page in renderDict['pages']:
-							<div id="List_$page['name']_$loop.index" class="chart-Lotus chart" 
+							<div id="List_out_$loop.index0" class="chart-Lotus chart" 
 							$if not loop.first:
 								style="display: none;"
 							>
