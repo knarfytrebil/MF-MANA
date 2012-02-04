@@ -60,7 +60,7 @@ $def with (renderDict)
 						<div class="chart-tab">
 						$for page in renderDict['pages']:
 							<div id="List_aa_$loop.index" class="chart-Lotus chart" 
-							$if loop.index:
+							$if not loop.first:
 								style="display: none;"
 							>
 							<ul class="chart-display clearfix">
