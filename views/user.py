@@ -70,6 +70,8 @@ class user(View):
 	
 	def briefing(self):
 		from modules.Balance import Balance
+		from modules.Record import Record
+		record = Record('flame_record','local')
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
 		renderDict['left'] = balance.Left(renderDict['user'].id)
