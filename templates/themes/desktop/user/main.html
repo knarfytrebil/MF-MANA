@@ -2,156 +2,156 @@ $def with (renderDict)
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Admin</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="Keywords" content="#">
-    <meta name="Description" content="#">
-    <link href="$renderDict['path']/css/site.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
-    <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
-    <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
-    <script type="text/javascript" src="$renderDict['path']/js/report.js"></script>
-    <script type="text/javascript" src="$renderDict['path']/js/highchart.js"></script>
+	<title>Admin</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="Keywords" content="#">
+	<meta name="Description" content="#">
+	<link href="$renderDict['path']/css/site.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
+	<script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
+	<script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
+	<script type="text/javascript" src="$renderDict['path']/js/report.js"></script>
+	<script type="text/javascript" src="$renderDict['path']/js/highchart.js"></script>
 </head>
 <body>
 <div class="frame-top">
-    <h1 class="logo"><a href="javascript:;">能焰电商产品后台管理系统</a></h1>
-    <div class="frame-nav" id="js_frame_nav_top">
-        <a href="#" class="focus">主控面板</a>
-        <a href="#">流量分析</a>
-        <a href="#">在线支付</a>
-        <a href="#">文件管理</a>
-        <a href="#">联系我们</a>
-    </div>
-    <ul class="user-box">
-        <li><a href="#" class="pull-menu">退出系统</a> </li>
-    </ul>
+	<h1 class="logo"><a href="javascript:;">能焰电商产品后台管理系统</a></h1>
+	<div class="frame-nav" id="js_frame_nav_top">
+		<a href="#" class="focus">主控面板</a>
+		<a href="#">流量分析</a>
+		<a href="#">在线支付</a>
+		<a href="#">文件管理</a>
+		<a href="#">联系我们</a>
+	</div>
+	<ul class="user-box">
+		<li><a href="#" class="pull-menu">退出系统</a> </li>
+	</ul>
 </div>
 <div class="frame-container clearfix">
-    <div class="frame-main">
-        <div class="col-side clearfix">
-            <div class="directory-tree clearfix">
-                <ol>
-                    <li><a href="#"><i class="inav home"></i>主控面板</a></li>
-                    <li><a href="#"><i class="inav data"></i>流量分析</a></li>
-                    <li><a href="#"><i class="inav pay"></i>在线支付</a></li>
-                    <li><a href="#"><i class="inav file"></i>文件管理</a></li>
-                    <li><a href="#"><i class="inav contact"></i>联系我们</a></li>
-                </ol>
-            </div>
-        </div>
-        <div class="col-frame clearfix">
-            <div class="top-handle">
-                <div class="con">
-                    <a href="javascript:;" class="button" >上传文件</a>
-                    <a href="javascript:;" class="button btn-orange btn-large" >在线充值</a>
-                 </div>
-            </div>
-            <div class="page-main clearfix">
-                <div class="col-main col-index">
-                    <div class="chart-bd">
-                        <div class="chart-tit">
-                            <h1>流量分析</h1>
-                            <ul id="chart-tab">
-                            $for page in renderDict['pages']:
-                                <li class="$if $page['index'] == 0:set Lotus" id="Tab_aa_$page['index']" onclick="switchTab('aa',$page['index'],3,'set','')">$page['name']</li>
-                            </ul>
-                        </div>
-                        <div class="chart-tab">
-                            <div id="List_aa_0" class="chart-Lotus chart">
-                                <ul class="chart-display clearfix">
-                                    <li id="List_bb_0">
-                                        1
-                                    </li>
-                                    <li id="List_bb_1" style="display: none;">
-                                        2
-                                    </li>
-                                </ul>
-                                <div class="order">
-                                    <ul id="order-section">
-                                        <li class="set" id="Tab_bb_0" onclick="switchTab('bb',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
-                                        <li id="Tab_bb_1" onclick="switchTab('bb',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--chart 1 end-->
-                            <div id="List_aa_1" class="chart-Kurogal chart" style="display: none;">
-                                <ul class="chart-display">
-                                    <li id="List_cc_0">
-                                        3
-                                    </li>
-                                    <li id="List_cc_1" style="display: none;">
-                                        4
-                                    </li>
-                                </ul>
-                                <div class="order">
-                                    <ul id="order-section">
-                                        <li class="set" id="Tab_cc_0" onclick="switchTab('cc',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
-                                        <li id="Tab_cc_1" onclick="switchTab('cc',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--chart 2 end-->
-                            <div id="List_aa_2" class="chart-Reg chart" style="display: none;">
-                                <ul class="chart-display">
-                                    <li id="List_dd_0">
-                                        5
-                                    </li>
-                                    <li id="List_dd_1" style="display: none;">
-                                        6
-                                    </li>
-                                </ul>
-                                <div class="order">
-                                    <ul id="order-section">
-                                        <li class="set" id="Tab_dd_0" onclick="switchTab('dd',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
-                                        <li id="Tab_dd_1" onclick="switchTab('dd',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--chart 3 end-->
-                        </div>
-                    </div>
-                </div>
-                <!--col main end-->
-                <div class="col-sub">
-                    <div class="user-info-box">
-                        <div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">ahkjxy</a>
-                            <ul class="user-approve">
-                                <li><a href="#">2012-12-23</a></li>
-                            </ul>
-                        </div>
-                        <ul class="user-info-list">
-                            <li><em>开通日期：</em><span>2012-12-12 16：23</span></li>
-                            <li><em>开通流量：</em><span>20000</span></li>
-                            <li><em>使用流量：</em><span>10000</span></li>
-                            <li><em>流量剩余：</em><span>10000</span></li>
-                            <li><em>账户余额：</em><span style="color:red;">3000</span><a class="button btn-red" href="#">充值</a></li>
-                        </ul>
-                    </div>
-                    <div class="sub-tips sub-notice">
-                        <h3><span><a href="javascript:;">新手入门</a></span></h3>
-                        <div style="height:120px;" class="notice-list">
-                            <ul>
-                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
-                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
-                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
-                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
-                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <dl class="weibo-box">
-                        <dt>关注我们：</dt>
-                        <dd><a target="_blank" class="wb-tencent" href="#">腾讯微博</a></dd>
-                        <dd><a target="_blank" class="wb-sina" href="#">新浪微博</a></dd>
-                        <dd><a target="_blank" class="wb-neteasy" href="#">网易微博</a></dd>
-                    </dl>
-                </div>
+	<div class="frame-main">
+		<div class="col-side clearfix">
+			<div class="directory-tree clearfix">
+				<ol>
+					<li><a href="#"><i class="inav home"></i>主控面板</a></li>
+					<li><a href="#"><i class="inav data"></i>流量分析</a></li>
+					<li><a href="#"><i class="inav pay"></i>在线支付</a></li>
+					<li><a href="#"><i class="inav file"></i>文件管理</a></li>
+					<li><a href="#"><i class="inav contact"></i>联系我们</a></li>
+				</ol>
+			</div>
+		</div>
+		<div class="col-frame clearfix">
+			<div class="top-handle">
+				<div class="con">
+					<a href="javascript:;" class="button" >上传文件</a>
+					<a href="javascript:;" class="button btn-orange btn-large" >在线充值</a>
+				 </div>
+			</div>
+			<div class="page-main clearfix">
+				<div class="col-main col-index">
+					<div class="chart-bd">
+						<div class="chart-tit">
+							<h1>流量分析</h1>
+							<ul id="chart-tab">
+							$for page in renderDict['pages']:
+								<li class="$if $page['index'] == 0:set Lotus" id="Tab_aa_$page['index']" onclick="switchTab('aa',$page['index'],3,'set','')">$page['name']</li>
+							</ul>
+						</div>
+						<div class="chart-tab">
+							<div id="List_aa_0" class="chart-Lotus chart">
+								<ul class="chart-display clearfix">
+									<li id="List_bb_0">
+										1
+									</li>
+									<li id="List_bb_1" style="display: none;">
+										2
+									</li>
+								</ul>
+								<div class="order">
+									<ul id="order-section">
+										<li class="set" id="Tab_bb_0" onclick="switchTab('bb',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
+										<li id="Tab_bb_1" onclick="switchTab('bb',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
+									</ul>
+								</div>
+							</div>
+							<!--chart 1 end-->
+							<div id="List_aa_1" class="chart-Kurogal chart" style="display: none;">
+								<ul class="chart-display">
+									<li id="List_cc_0">
+										3
+									</li>
+									<li id="List_cc_1" style="display: none;">
+										4
+									</li>
+								</ul>
+								<div class="order">
+									<ul id="order-section">
+										<li class="set" id="Tab_cc_0" onclick="switchTab('cc',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
+										<li id="Tab_cc_1" onclick="switchTab('cc',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
+									</ul>
+								</div>
+							</div>
+							<!--chart 2 end-->
+							<div id="List_aa_2" class="chart-Reg chart" style="display: none;">
+								<ul class="chart-display">
+									<li id="List_dd_0">
+										5
+									</li>
+									<li id="List_dd_1" style="display: none;">
+										6
+									</li>
+								</ul>
+								<div class="order">
+									<ul id="order-section">
+										<li class="set" id="Tab_dd_0" onclick="switchTab('dd',0,2,'set','')"><a href="javascript:;">按日查询</a></li>
+										<li id="Tab_dd_1" onclick="switchTab('dd',1,2,'set','')"><a href="javascript:;">按月查询</a></li>
+									</ul>
+								</div>
+							</div>
+							<!--chart 3 end-->
+						</div>
+					</div>
+				</div>
+				<!--col main end-->
+				<div class="col-sub">
+					<div class="user-info-box">
+						<div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">ahkjxy</a>
+							<ul class="user-approve">
+								<li><a href="#">2012-12-23</a></li>
+							</ul>
+						</div>
+						<ul class="user-info-list">
+							<li><em>开通日期：</em><span>2012-12-12 16：23</span></li>
+							<li><em>开通流量：</em><span>20000</span></li>
+							<li><em>使用流量：</em><span>10000</span></li>
+							<li><em>流量剩余：</em><span>10000</span></li>
+							<li><em>账户余额：</em><span style="color:red;">3000</span><a class="button btn-red" href="#">充值</a></li>
+						</ul>
+					</div>
+					<div class="sub-tips sub-notice">
+						<h3><span><a href="javascript:;">新手入门</a></span></h3>
+						<div style="height:120px;" class="notice-list">
+							<ul>
+								<li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+								<li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+								<li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+								<li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+								<li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+							</ul>
+						</div>
+					</div>
+					<dl class="weibo-box">
+						<dt>关注我们：</dt>
+						<dd><a target="_blank" class="wb-tencent" href="#">腾讯微博</a></dd>
+						<dd><a target="_blank" class="wb-sina" href="#">新浪微博</a></dd>
+						<dd><a target="_blank" class="wb-neteasy" href="#">网易微博</a></dd>
+					</dl>
+				</div>
 
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
 </div>
 </body>
 </html>
