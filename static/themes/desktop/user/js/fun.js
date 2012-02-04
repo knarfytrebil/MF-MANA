@@ -26,10 +26,10 @@ function switchTab(identify,index,count,cnon,cnout) {
 function plot_overview(class_id,data){
     $.plot($(class_id), [data], {
         series: {
-            bars: { show: true },
+            lines: { show: true, lineWidth: 1 },
             shadowSize: 0
         },
-        grid: { color: "#999" },
+        grid: { color: "#FFF" },
         xaxis: { ticks: [], mode: "time" },
         yaxis: { ticks: [], min: 0, autoscaleMargin: 0.1 }
     });
