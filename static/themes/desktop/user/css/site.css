@@ -636,8 +636,8 @@ li {
 }
 .order{
     position: absolute;
-    right:20px;
-    top:20px;
+    left:50%;
+    bottom:10px;
 }
 .order li{
     float:left;
@@ -658,7 +658,7 @@ li {
     height:400px;
 }
 .chart-display li{
-    width:600px;
+    width:90%;
     margin: 0 auto;
     height:400px;
 }
