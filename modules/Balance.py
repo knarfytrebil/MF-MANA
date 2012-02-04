@@ -16,7 +16,7 @@ class Balance(Base):
 		id = self.last_id() + 1
 		self.sdb.insert(self.table,id=id,**kw)
 	
-	def out(self,uid,day,value):
+	def out(self,uid,day,value,page):
 		import datetime
 		ds = datetime.datetime.strptime("%s 00:00:00" % day, "%Y-%m-%d %H:%M:%S")
 		de = datetime.datetime.strptime("%s 23:59:59" % day, "%Y-%m-%d %H:%M:%S")
@@ -25,10 +25,10 @@ class Balance(Base):
 		x = self.sdb.query(SQL % PARA)
 		r = len(x)
 		if not r:
-			self.add(value=value,user=uid)
+			self.add(page=page,value=value,user=uid)
 		else:
 			w = "id = %s" % x[0].id
-			self.sdb.update(self.table,where=w,value=value,user=uid)
+			self.sdb.update(self.table,where=w,value=value,user=uid,page=page)
 		
 	def ShowAll(self,UserId):
 		return self._get(user=UserId)

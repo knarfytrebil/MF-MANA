@@ -24,7 +24,7 @@ for u in USERS:
 			day_balance = 0
 			for item in PageList:
 				price = page._get(name=item)[0].click
-				day_balance += log._hours(strd,"/%s/" % item)[1] * price * -1
+				day_balance = log._hours(strd,"/%s/" % item)[1] * price * -1
 				hours = log._hours(strd,"/%s/" % item)[0]
 				days = log._days(strm,"/%s/" % item)[0]
 				for hour in hours:
@@ -35,7 +35,8 @@ for u in USERS:
 					d = day[0]
 					v = day[1]
 					record.renew(d,strm,item,v,'month')
-			balance.out(u.id,strd,day_balance)
+				if day_balance != 0:
+					balance.out(u.id,strd,day_balance,item)
 			s = 0
 			l = balance.Left(u.id)
 			t = balance.Total(u.id)
