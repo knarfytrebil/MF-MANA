@@ -67,7 +67,6 @@ $def with (renderDict)
                             </div>
                             <div class="data-chart" id="$page['name']">
                                 <script type="text/javascript">
-                                    plot_overview("#$page['name']",$page['log']);
                                     $$(function(){
                                         $$("#$page['name']").tipTip({content:"本日流量:$page['d']",defaultPosition:'right'});
                                     });
@@ -113,6 +112,12 @@ $def with (renderDict)
         </div>
     </div>
     <div class="clear"></div>
+    <script type="text/javascript">
+    $(function () { 
+        $for page in renderDict['pages']:
+            plot_overview("#$page['name']",$page['log']);
+    });
+    </script>
 </div>
 </body>
 </html>
