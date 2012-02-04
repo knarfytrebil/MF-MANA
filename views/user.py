@@ -42,6 +42,9 @@ class user(View):
 		else:
 			return web.seeother('/')
 	
+	def POST(self):
+		pass
+	
 	def balance(self):
 		from modules.Balance import Balance
 		balance = Balance('flame_balance','local')

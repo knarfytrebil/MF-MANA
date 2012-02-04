@@ -73,7 +73,7 @@ li {
 /**.frame-nav**/
 .frame-nav {
     position:relative;
-    width:400px;
+    width:510px;
     height:44px;
     margin:auto;
     text-align:left;
@@ -204,11 +204,14 @@ li {
 .directory-tree .pay{
     background-position: -26px 0;
 }
+.directory-tree .contact{
+    background-position: -78px 0;
+}
 .directory-tree .file{
     background-position: -52px 0;
 }
-.directory-tree .contact{
-    background-position: -78px 0;
+.directory-tree .data{
+    background-position: -104px 0;
 }
 
 /*.col-frame*/
@@ -312,6 +315,7 @@ li {
     overflow: hidden;
     padding: 14px 10px 14px 85px;
     position: relative;
+    text-shadow: 0 1px 1px #999;
 }
 .disk-info .icon {
     background: url("../images/icon_reports.png") no-repeat scroll 0 0 transparent;
@@ -354,6 +358,52 @@ li {
     height: 15px;
     margin: 0 -1px;
     overflow: hidden;
+}
+/*today data*/
+.today-data{
+    background:#f6f8f7;
+    border: 1px solid #CECECE;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 0 1px 1px #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
+    height: 48px;
+    margin: 10px;
+    overflow: hidden;
+    padding: 14px 10px 14px 15px;
+    position: relative;
+    text-shadow: 0 1px 1px #999;
+}
+.today-data h1{
+    font-size: 16px;
+    padding: 0 0 14px 0;
+    color: #36f;
+}
+.today-data:hover,.disk-info:hover{
+    background: #F67E19;
+    box-shadow: 0 1px 2px #dbdbdb;
+    color: #f5f5f5;
+}
+.today-data .icon{
+    display: block;
+    width:15px;
+    height:15px;
+    float: left;
+}
+.today-data .data-title{
+    float: left;
+    margin: 0 20px;
+    font-size: 14px;
+}
+.today-data .data-title em{
+    color: #900;
+    font-style: normal;
+}
+.data-chart{
+    position: absolute;
+    right:15px;
+    top:8px;
+    width:100px;
+    height:60px;
+    background: #dfd;
 }
 /*user info*/
 .user-info-box {
