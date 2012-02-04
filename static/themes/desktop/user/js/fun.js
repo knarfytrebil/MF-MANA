@@ -26,7 +26,7 @@ function switchTab(identify,index,count,cnon,cnout) {
 function plot_overview(class_id,data){
     $.plot($(class_id), data, {
         series: {
-            lines: { show: true, lineWidth: 1 },
+            bars: { show: true },
             shadowSize: 0
         },
         grid: { color: "#999" },
