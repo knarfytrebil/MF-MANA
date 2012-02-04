@@ -113,7 +113,7 @@ $def with (renderDict)
     </div>
     <div class="clear"></div>
     <script type="text/javascript">
-    $(function () { 
+    $$(function () { 
         $for page in renderDict['pages']:
             plot_overview("#$page['name']",$page['log']);
     });
