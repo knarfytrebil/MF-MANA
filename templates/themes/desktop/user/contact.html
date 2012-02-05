@@ -143,23 +143,23 @@ $def with (renderDict)
 
 
 	<script type="text/javascript">
-        $(document).ready(function(){
-           	var $commitli = $(".commit-box li");
-			var $commitlieven = $(".commit-box li:even");
-			$commitlieven.addClass("b-s");
-			$commitli.hover(function(){$(this).addClass("h-bg")},
-			function(){$(this).removeClass("h-bg")}
+        $$(document).ready(function(){
+           	var $$commitli = $$(".commit-box li");
+			var $$commitlieven = $$(".commit-box li:even");
+			$$commitlieven.addClass("b-s");
+			$$commitli.hover(function(){$$(this).addClass("h-bg")},
+			function(){$$(this).removeClass("h-bg")}
 			)
-			var $bodybg = $(".tm-bg");
-			var $height = $("#height-bg");
-			$bodybg.height();
-			var $btnin = $(".btn-inline")
-			var $close = $(".close")
-			$btnin.click(function(){
-				$("#popup").show()
+			var $$bodybg = $$(".tm-bg");
+			var $$height = $$("#height-bg");
+			$$bodybg.height();
+			var $$btnin = $$(".btn-inline")
+			var $$close = $$(".close")
+			$$btnin.click(function(){
+				$$("#popup").show()
 			})
-			$close .click(function(){
-				$("#popup").hide()
+			$$close .click(function(){
+				$$("#popup").hide()
 			})
 
         })
