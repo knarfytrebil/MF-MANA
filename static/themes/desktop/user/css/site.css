@@ -636,7 +636,7 @@ li {
 }
 .order{
     position: absolute;
-    left:50%;
+    left:40%;
     bottom:10px;
 }
 .order li{
