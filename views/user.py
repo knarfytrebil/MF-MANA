@@ -80,7 +80,7 @@ class user(View):
 		from modules.Record import Record
 		from modules.Tag import Tag
 		from modules.Page import Page
-		page = Page('flame_page','local')
+		__page = Page('flame_page','local')
 		tag = Tag('flame_tag','local')
 		DM = DayAndMonth()
 		strd = DM[0]
@@ -92,7 +92,7 @@ class user(View):
 		PageList = renderDict['user'].list.split(',')
 		renderDict['pages'] = []
 		for item in PageList:
-			_page = page._get(name=item)[0]
+			_page = __page._get(name=item)[0]
 			page = {}
 			page['tags'] = tag._get(parent=_page.id)
 			page['price'] = _page.click
