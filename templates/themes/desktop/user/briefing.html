@@ -12,15 +12,6 @@ $def with (renderDict)
     <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.tipTip.js"></script>
-    <script type="text/javascript">
-
-    var $$today = $$(".today-data");
-    var $$kul = $$(".keyword-bg");
-                    
-    $$today.hover(function(){$$(this).children().eq(0).animate({ opacity:1,bottom:3,}, 500);},
-    function(){$$(this).children().eq(0).animate({ opacity:0,bottom:-5 }, 100)}
-    )
-    </script>
 </head>
 <body>
 <div class="frame-top">
@@ -140,7 +131,15 @@ $def with (renderDict)
                         <dd><a target="_blank" class="wb-neteasy" href="#">网易微博</a></dd>
                     </dl>
                 </div>
+                <script type="text/javascript">
 
+                var $$today = $$(".today-data");
+                var $$kul = $$(".keyword-bg");
+                                
+                $$today.hover(function(){$$(this).children().eq(0).animate({ opacity:1,bottom:3,}, 500);},
+                function(){$$(this).children().eq(0).animate({ opacity:0,bottom:-5 }, 100)}
+                )
+                </script>
             </div>
         </div>
     </div>
