@@ -43,6 +43,9 @@ li {
 .clearfix {
 	display: block;
 }
+html, body {
+    height: 100%; /* make the percentage height on placeholder work */
+}
 /*main style*/
 /*.frame-top*/
 .frame-top {
@@ -127,10 +130,10 @@ li {
 /*.frame-container*/
 .frame-container {
     position:absolute;
-    top:40px;
     right:0;
     bottom:0;
     left:0;
+    top:40px;
     height:100%;
     width:100%;
 }
@@ -264,6 +267,14 @@ li {
     color:#FFF;
     opacity: .6;
  }
+.btn-redhat{
+    float:right;
+    text-shadow:0 1px #990000;
+    border:1px solid #cc0000;
+    border-radius:3px;
+    background-color:#cc0021;
+    box-shadow:0 1px 2px rgba(255, 0, 0, 0.3);
+}
 /**.btn-icon**/
 .btn-icon {
     position:relative;
@@ -401,8 +412,9 @@ li {
     position: absolute;
     right:15px;
     top:8px;
-    width:300px;
+    width:100px;
     height:60px;
+    background: #dfd;
 }
 /*user info*/
 .user-info-box {
@@ -541,15 +553,13 @@ li {
 }
 /*weibo style*/
 .weibo-box {
-    border-top: 1px solid #E7E6E6;
     bottom: 0;
-    box-shadow: 0 1px 1px #FFFFFF inset;
     height: 24px;
-    left: 0;
+    right: 0;
     overflow: hidden;
     padding: 10px 0;
-    position: absolute;
-    right: 0;
+    position: fixed;
+    _position: absolute;
     width: 214px;
 }
 .weibo-box dt {
@@ -612,6 +622,7 @@ li {
 }
 .chart-tit li{
     float:left;
+
 }
 .chart-tit ul{
     margin-top: 12px;
@@ -629,6 +640,7 @@ li {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     color: #FFFFFF;
     font-weight: bold;
+    text-shadow: 0 1px #276DDD;
   }
 .chart{
     padding:15px;
@@ -636,8 +648,8 @@ li {
 }
 .order{
     position: absolute;
-    right:0px;
-    bottom:0px;
+    left:45%;
+    bottom:-10px;
 }
 .order li{
     float:left;
@@ -651,15 +663,17 @@ li {
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 0 1px 1px #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    padding: 20px 10px 14px 15px;
+    padding: 20px 10px 30px 15px;
 }
 .chart-display{
+    width:100%;
     height:400px;
+    overflow: hidden;
 }
 .chart-display li{
-    margin: 0 auto;
     width:100%;
-    height:393px;
+    margin: 0 auto;
+    height:400px;
 }
 #order-section li.set{
     background-color: #F4A32F;
@@ -673,3 +687,172 @@ li {
 #order-section li.set a{
     color: #fff;
 }
+.file-data{
+    margin: 10px;
+    width:98%;
+    background-color: #f5f5f5;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px 3px 3px 3px;
+}
+.file-data ul{
+    padding: 10px;
+}
+.file-data ul li{
+    width:130px;
+    height:190px;
+    float: left;
+    position: relative;
+    background-color:#eeb133;
+    border: 1px solid  #eeb163;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    color: #e0e0e0;
+    font-weight: bold;
+    text-shadow: 0 1px #276DDD;
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+}
+.file-data ul li:hover{
+    opacity: .7;
+}
+p.upload-images{
+    padding:20px 0 10px 0;
+}
+.file-data h4{
+    padding:4px 0;
+}
+.upload-data{
+    padding-bottom:4px;
+}
+p.upload-images a{
+    display: block;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    border-color: #f3f3f3;
+    text-shadow: 0 1px #EF7714;
+    padding:10px 0;
+    vertical-align: baseline;
+}
+.upload-fun{
+    position: absolute;
+    bottom: 3px;
+    left:0;
+    padding:4px 0;
+    width:100%;
+    background: #1a1a1a;
+    opacity: .8;
+    display: none;
+}
+.upload-fun a{
+    padding:0 5px;
+    color: #fff;
+    text-shadow: none;
+}
+h1.title{
+    height:35px;
+    line-height: 35px;
+    font-size: 14px;
+    background: url(../images/title.png);
+    padding-left:13px;
+    color: #36f;
+ }
+#loading{
+    position: absolute;
+    left:45%;
+    top:40%;
+}
+
+/**box bd-*/
+#box-bd{
+    width:100%;
+    height:100%;
+    background: #000;
+    position: absolute;
+    left:0;
+    right:0;
+    z-index: 9998;
+    opacity: .5;
+}
+#box{
+    width:440px;
+    height:300px;
+    background: #fff;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-top: -150px;
+    margin-left: -220px;
+    z-index: 10000;
+    border:8px solid #f2f2f2;
+ }
+.box-title{
+    height:36px;
+    line-height:36px;
+    background:#4C8FFC;
+    color: #fff;
+    cursor: move;
+}
+.box-title h1{
+    font-size: 16px;
+    padding-left:16px;
+    float:left;
+}
+.box-title a{
+    float:right;
+    display: block;
+    height:26px;
+    width:26px;
+    line-height:26px;
+    text-align: center;
+    font-size: 20px;
+    background: #f5f5f5;
+    margin:4px;
+}
+.box-title a:hover{
+    background: #d0461a;
+    color: #fff;
+}
+
+.flexigrid{margin:10px}
+.flexigrid div.bDiv table,.flexigrid div.hDivBox,.flexigrid div.hDiv table{ width:100%}
+.directory-tree .report {background-position: -104px 0;}
+#slideshow{ height: 267px;margin: 100px auto;overflow: auto;position: relative;width: 900px;}
+#slidesContainer{ width:800px;margin:0 auto}
+.controlright ,.rightControlh{cursor: pointer;display: block;height:30px;position: absolute;right: 0;top: 0;width: 30px;z-index: 1;color:#214c5f; font-size:20px; font-weight:bold;top: 132px;}
+.controlleft,.leftControlh{cursor: pointer;display: block;height: 30px;left: 0;position: absolute;top: 0;width: 30px;z-index: 1;color:#214c5f;font-size:20px;font-weight:bold;top: 132px;}
+.commit-box{margin:10px;}
+.commit-group-heading{background:#E6F1F6;border: 1px solid #C5D5DD;border-top-left-radius: 4px;border-top-right-radius: 4px;color: #3A505B;font-size: 13px;margin: 15px 0 0;padding: 5px 8px;text-shadow: 0 1px #FFFFFF;}
+.commit-group{border:1px #C5D5DD solid;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;margin: 0 0 15px;background:#F7FBFC;}
+.commit-group-item .gravatar {border-radius: 4px 4px 4px 4px;float: left;margin:5px 10px 0 10px;}
+.commit-group-item .commit-title {color: #333333;font-size: 14px;font-weight: bold;margin: 1px 0;}
+.commit-group-item {border-top: 1px solid #E2EAEE;padding:8px 0;position: relative;}
+.commit{ clear:both; overflow:hidden}
+.btn-inline{ float:right;margin-right:214px; background:#0CC; border-color:#066;}
+.ft{ float:left;}
+.h-bg{ background:#FCFCE2 !important}
+.b-s{ background:#fff}
+.tm-bg{ width:100%;height:100%; position:fixed;filter:alpha(opacity=30);opacity:0.3; background:#000; z-index:100; _position:absolute}
+.p-box{ width:300px;height:230px;margin:-115px 0 0 -150px; position:fixed;z-index:102;top:50%;left:50%; border-radius:3px;border:1px #999 solid; background:#fff;_position:absolute}
+.p-title{border-radius:4px;border: 1px solid #E78F08;color: #FFFFFF;padding: 0.4em 1em;margin:3px; background:#F6A828}
+.p-con{ padding:10px;}
+.p-con textarea{padding:2px 0 2px 3px;border:1px #C5D5DD solid;vertical-align:top;height:100px; overflow:auto; width:240px;}
+.p-con label{ display:inline-block; margin-right:5px; font-weight:bold; width:30px}
+.p-con input{ border:1px #C5D5DD solid;height:16px;padding:2px 0 2px 3px; vertical-align:middle;}
+.p-con li{ padding-bottom:10px}
+.p-con button{ margin-right:5px;background-color: #4C8FFC; border: 1px solid #276DDD;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+color:#fff;font-weight: bold;height:25px;line-height:25px;overflow: hidden;padding: 0 18px;text-align: center;text-shadow: 0 1px #276DDD; cursor:pointer}
+.close{	height: 18px;padding: 1px; position: absolute;right:0;top:8px;width: 19px;color:#fff; font-weight:bold}
+
+.today-data{ padding-top:0}
+#lotus-data{ position:relative;top:10px;}
+.today-data ul.lab li{ float:left;height:16px; position:relative; padding:3px 5px;border-radius:0 0 4px 4px; background:#313131; margin-right:5px; color:#fff}
+.today-data ul.lab li span{ color:#F90;text-shadow: 0 0px 0px #999; vertical-align:middle;}
+#lotus-data{ clear:both;}
+.today-data:hover{ background:#edf8f6}
+.keyword-bg{background:#000; font-weight:bold;width:196px;height:54px; position:absolute;right:-204px;bottom:-5px;margin:-28px 0 0 -99px;border-radius:4px; color:#fff; z-index:9999;filter:alpha(opacity=0);opacity:0;box-shadow: 0 3px 3px #000;}
+.keyword-bg .keyword-con{ margin:1px; background:#000;height:100%;height:48px;border-radius:4px; padding:2px;word-wrap: break-word;}
+.keyword-con ul{ position:relative;left:12px}
+.keyword-bg li{ float:left; margin-right:10px;text-shadow:none; display:inline;}
+.keyword-bg li span{ float:left; min-width:25px;}
+.col-index{ overflow:visible; z-index:99}

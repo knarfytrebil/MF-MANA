@@ -33,12 +33,14 @@ class user(View):
 			renderDict['path'] = "/static/themes/%s/%s" % (v,THEME)
 			if page == "balance":
 				return self.balance()
-			if page == "analyse":
+			if page == "analyze":
 				return self.chart()
 			if page == "briefing":
 				return self.briefing()
 			if page == "upload":
 				return self.upload()
+			if page == "contact":
+				return self.contact()
 		else:
 			return web.seeother('/')
 	
@@ -98,3 +100,6 @@ class user(View):
 	
 	def upload(self):
 		return self.render.upload(renderDict)
+	
+	def contact(self):
+		return self.render.contact(renderDict)
