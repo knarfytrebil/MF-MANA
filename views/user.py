@@ -104,9 +104,5 @@ class user(View):
 	def contact(self):
 		from modules.Node import Node
 		node = Node('flame_node','local')
-		data = []
-		for datum in node._get(scope=renderDict['user'].id)[-30:]:
-			data.append(datum)
-		data.reverse()
-		renderDict['messages'] = data[:30]
+		renderDict['messages'] = node._get(order="id DESC",scope=renderDict['user'].id)
 		return self.render.contact(renderDict)

@@ -44,14 +44,14 @@ class Base():
 		results = self.sdb.select(self.table, myvar, where=where,order='id ASC')
 		return results
 
-	def _get(self,**kwargs):
+	def _get(self,order="id ASC",**kwargs):
 		myvar = kwargs
 		wherelist = []
 		for key in kwargs.keys():
 			w = "%s = $%s" % (key,key)
 			wherelist.append(w)
 		where = " AND ".join(wherelist)
-		results = self.sdb.select(self.table, myvar, where=where,order='id ASC')
+		results = self.sdb.select(self.table, myvar, where=where,order=order)
 		return results
 		
 	def delete(self,id):
