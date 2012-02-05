@@ -91,7 +91,7 @@ $def with (renderDict)
                             <div class="data-chart" id="$page['name']">
                                 <script type="text/javascript">
                                     $$(function(){
-                                        $$("#$page['name']").tipTip({content:"本日流量:$page['d']",defaultPosition:'right'});
+                                        $$("#$page['name']").tipTip({content:"本日流量:$page['d']",defaultPosition:'left'});
                                         plot_overview("#$page['name']",$page['log']);
                                     });
                                 </script>
