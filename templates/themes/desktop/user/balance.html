@@ -64,26 +64,26 @@ $def with (renderDict)
                                 <thead>
                                     <tr>
                                         <th align="center">
+                                            <div class="sundefined">页面</div>
+                                        </th>
+                                        <th align="center">
                                             <div class="sundefined">金额</div>
                                         </th>
                                         <th align="center">
                                             <div class="sundefined">日期</div>
-                                        </th>
-                                        <th align="center">
-                                            <div class="sundefined">页面</div>
                                         </th>
                                     </tr>
                                 </thead>
                             $for balance in renderDict['balances']:
                                 <tr>
                                     <td align="left">
+                                        <div class="sundefined">$balance.page</div>
+                                    </td>
+                                    <td align="left">
                                         <div class="sundefined">$balance.value</div>
                                     </td>
                                     <td align="left">
                                         <div class="sundefined">$balance.time</div>
-                                    </td>
-                                    <td align="left">
-                                        <div class="sundefined">$balance.page</div>
                                     </td>
                                 </tr>
                             </tbody>
