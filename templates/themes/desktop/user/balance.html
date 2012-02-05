@@ -63,13 +63,13 @@ $def with (renderDict)
 							<tbody>
 								<thead>
 									<tr>
-										<th align="center">
+										<th align="left">
 											<div class="sundefined">页面</div>
 										</th>
-										<th align="center">
+										<th align="right">
 											<div class="sundefined">金额</div>
 										</th>
-										<th align="center">
+										<th align="left">
 											<div class="sundefined">日期</div>
 										</th>
 									</tr>
@@ -80,7 +80,7 @@ $def with (renderDict)
 										<div class="sundefined">$balance.page</div>
 									</td>
 									$if balance.value > 0:
-										<td align="left">
+										<td align="right">
 											<div class="sundefined">$balance.value</div>
 										</td>
 									$else:
@@ -93,7 +93,7 @@ $def with (renderDict)
 								</tr>
 							<tr>
 								<td align="right">余额</td>
-								<td>$renderDict['left']</td>
+								<td align="right">$renderDict['left']</td>
 								<td></td>
 							</tr>
 							</tbody>
