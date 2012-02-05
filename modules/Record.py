@@ -54,7 +54,7 @@ class Record(Base):
 		for item in data:
 			if RecType == "day":
 				x.append([ HourToTimeStamp("%s %s:00:00" % (date,item.hour)) ,int(item.value)])
-			elif RecType == "month"
+			elif RecType == "month":
 				x.append([ DateToTimeStamp("%s %s:00:00" % (date,item.hour)),int(item.value)])
 			i += item.value
 		return x,i
