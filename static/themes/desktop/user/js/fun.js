@@ -67,4 +67,5 @@ function plot_big(class_id,data){
     };
 
     $.plot($(class_id), [data], options);
+    $(class_id).show();
 }
