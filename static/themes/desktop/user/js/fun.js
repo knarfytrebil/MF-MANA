@@ -60,6 +60,7 @@ function plot_big(class_id,data){
 
     var options = {
         bars: { show: true, barWidth: 0.5, fill: 0.9 },
+        points: { show: true },
         xaxis: { mode: "time" },
         grid: { 
             markings: weekendAreas,
