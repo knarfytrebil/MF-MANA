@@ -845,7 +845,7 @@ color:#fff;font-weight: bold;height:25px;line-height:25px;overflow: hidden;paddi
 .today-data{ padding-top:0}
 .lotus-data{ position:relative;top:10px;}
 .today-data ul.lab li{ float:left;height:16px; position:relative; padding:3px 5px;border-radius:0 0 4px 4px; background:#313131; margin-right:5px; color:#fff}
-.today-data ul.lab li span{ color:#F90;text-shadow: 0 0px 0px #999; vertical-align:middle;}
+.today-data ul.lab li span{ color:#F90;text-shadow: 0 0px 0px #999; float: right;}
 #lotus-data{ clear:both;}
 .today-data:hover{ background:#edf8f6}
 .keyword-bg{background:#000; font-weight:bold;width:196px;height:54px; position:absolute;right:-204px;bottom:-5px;margin:-28px 0 0 -99px;border-radius:4px; color:#fff; z-index:9999;filter:alpha(opacity=0);opacity:0;box-shadow: 0 3px 3px #000;+display:none;+filter:alpha(opacity=100);}
