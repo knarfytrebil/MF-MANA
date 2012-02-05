@@ -11,6 +11,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, input, tex
 body {
     font:normal 12px/16px "microsoft yahei";
     background:#fff;
+    overflow: hidden;
 }
 a {
     text-decoration:none;
