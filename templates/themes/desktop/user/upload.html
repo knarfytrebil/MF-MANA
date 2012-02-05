@@ -1,14 +1,157 @@
 $def with (renderDict)
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Upload</title>
+    <title>Admin</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Keywords" content="#">
+    <meta name="Description" content="#">
+    <link href="$renderDict['path']/css/site.css" rel="stylesheet" type="text/css">
+    <link href="$renderDict['path']/css/tipTip.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
+    <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
+    <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
+    <script type="text/javascript" src="$renderDict['path']/js/jquery.tipTip.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+    <!--[if IE 6]>
+        <script type="text/javascript" src="$renderDict['path']/js/ie.js"></script>
+        <script type="text/javascript" src="http://dillerdesign.com/experiment/DD_belatedPNG/DD_belatedPNG_0.0.8a-min.js"></script>
+        <script type="text/javascript">
+            DD_belatedPNG.fix('.logo a,.inav,.upload-images a img');
+        </script>
+    <![endif]-->
 </head>
 <body>
-Hello, welcome to the dummy page of upload <br>
-<form method="POST" enctype="multipart/form-data" action="">
-<input type="file" name="myfile" />
-<br/>
-<input type="submit" />
-</form>
+<div class="frame-top">
+    <h1 class="logo"><a href="javascript:;">能焰电商产品后台管理系统</a></h1>
+    <div class="frame-nav" id="js_frame_nav_top">
+        <a href="#">主控面板</a>
+        <a href="#">流量分析</a>
+        <a href="#">在线支付</a>
+        <a href="#" class="focus">文件管理</a>
+        <a href="#">联系我们</a>
+    </div>
+    <ul class="user-box">
+        <li><a href="#" class="pull-menu">退出系统</a> </li>
+    </ul>
+</div>
+<div class="frame-container clearfix">
+    <div class="frame-main">
+        <div class="col-side clearfix">
+            <div class="directory-tree clearfix">
+                <ol>
+                    <li><a href="#"><i class="inav home"></i>主控面板</a></li>
+                    <li><a href="#"><i class="inav data"></i>流量分析</a></li>
+                    <li><a href="#"><i class="inav pay"></i>在线支付</a></li>
+                    <li><a href="#"><i class="inav file"></i>文件管理</a></li>
+                    <li><a href="#"><i class="inav contact"></i>联系我们</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-frame clearfix">
+            <div class="top-handle">
+                <div class="con">
+                    <a href="javascript:;" class="button" >上传文件</a>
+                    <a href="javascript:;" class="button btn-orange btn-large" >在线充值</a>
+                    <a href="javascript:;" class="button btn-redhat btn-large" >联系客服</a>
+                 </div>
+            </div>
+            <div class="page-main clearfix">
+                <div class="col-main col-index">
+                    <div class="file-data">
+                        <h1 class="title">文件管理</h1>
+                        <ul class="clearfix">
+                            <li class="draggable">
+                                <p class="upload-images"><a href="#"><img src="images/zip.png"></a></p>
+                                <h4>文件名称</h4>
+                                <p class="upload-data">12.3M</p>
+                                <p class="upload-data">2012-11-10 10:23</p>
+                                <div class="upload-fun">
+                                    <a id="delete" href="javascript:;">删除</a>
+                                    <a id="view" href="javascript:;">预览</a>
+                                </div>
+                            </li>
+                            <li class="draggable">
+                                <p class="upload-images"><a href="#"><img src="images/zip.png"></a></p>
+                                <h4>文件名称</h4>
+                                <p class="upload-data">12.3M</p>
+                                <p class="upload-data">2012-11-10 10:23</p>
+                                <div class="upload-fun">
+                                    <a id="delete" href="javascript:;">删除</a>
+                                    <a id="view" href="javascript:;">预览</a>
+                                </div>
+                            </li>
+                            <li class="draggable">
+                                <p class="upload-images"><a href="#"><img src="images/zip.png"></a></p>
+                                <h4>文件名称</h4>
+                                <p class="upload-data">12.3M</p>
+                                <p class="upload-data">2012-11-10 10:23</p>
+                                <div class="upload-fun">
+                                    <a id="delete" href="javascript:;" >删除</a>
+                                    <a id="view" href="javascript:;">预览</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--col main end-->
+                <div class="col-sub">
+                    <div class="user-info-box">
+                        <div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">ahkjxy</a>
+                            <ul class="user-approve">
+                                <li><a href="#">2012-12-23</a></li>
+                            </ul>
+                        </div>
+                        <ul class="user-info-list">
+                            <li><em>开通日期：</em><span>2012-12-12 16：23</span></li>
+                            <li><em>开通流量：</em><span>20000</span></li>
+                            <li><em>使用流量：</em><span>10000</span></li>
+                            <li><em>流量剩余：</em><span>10000</span></li>
+                            <li><em>账户余额：</em><span style="color:red;">3000</span><a class="button btn-red" href="#">充值</a></li>
+                        </ul>
+                    </div>
+                    <div class="sub-tips sub-notice">
+                        <h3><span><a href="javascript:;">新手入门</a></span></h3>
+                        <div style="height:120px;" class="notice-list">
+                            <ul>
+                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+                                <li><i></i><a href="javascript:;"> 祝您新春快乐！万事如意！</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <dl class="weibo-box">
+                        <dt>关注我们：</dt>
+                        <dd><a target="_blank" class="wb-tencent" href="#">腾讯微博</a></dd>
+                        <dd><a target="_blank" class="wb-sina" href="#">新浪微博</a></dd>
+                        <dd><a target="_blank" class="wb-neteasy" href="#">网易微博</a></dd>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<dl class="weibo-box">
+    <dt>关注我们：</dt>
+    <dd><a target="_blank" class="wb-tencent" href="#">腾讯微博</a></dd>
+    <dd><a target="_blank" class="wb-sina" href="#">新浪微博</a></dd>
+    <dd><a target="_blank" class="wb-neteasy" href="#">网易微博</a></dd>
+</dl>
+<!--pop layer-->
+<div id="fancy-box" style="display:none;">
+    <div id="box-bd"></div>
+    <div class="box-outer">
+        <div id="box" class="draggable">
+            <div class="box-title">
+                <h1>用戶點擊試驗</h1>
+                <a href="javascript:;" onclick="close();">X</a>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
