@@ -61,7 +61,6 @@ function plot_big(class_id,data){
     var options = {
         bars: { show: true },
         points: { show: true },
-        color: "rgb(255,50,50)",
         xaxis: { mode: "time" },
         grid: { 
             markings: weekendAreas,
@@ -70,7 +69,7 @@ function plot_big(class_id,data){
         }
     };
 
-    $.plot($(class_id), [data], options);
+    $.plot($(class_id), [{ data: data, label: "流量", color: "#333" }], options);
 }
 
 
