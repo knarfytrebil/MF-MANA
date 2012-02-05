@@ -658,6 +658,7 @@ li {
 }
 .chart-display li{
     margin: 0 auto;
+    width:100%;
     height:400px;
 }
 #order-section li.set{
