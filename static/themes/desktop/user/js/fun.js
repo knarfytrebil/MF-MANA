@@ -58,7 +58,8 @@ function plot_big(class_id,data){
     }
 
     var options = {
-        xaxis: { mode: "time" }
+        xaxis: { mode: "time" },
+        minTickSize: [1, "month"]
     };
 
     $.plot($(class_id), [data], options);
