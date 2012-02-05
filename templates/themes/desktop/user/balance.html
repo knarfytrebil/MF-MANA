@@ -79,9 +79,14 @@ $def with (renderDict)
                                     <td align="left">
                                         <div class="sundefined">$balance.page</div>
                                     </td>
-                                    <td align="left">
-                                        <div class="sundefined">$balance.value</div>
-                                    </td>
+                                    $if $balance.value > 0:
+                                        <td align="left">
+                                            <div class="sundefined">$balance.value</div>
+                                        </td>
+                                    $else:
+                                        <td align="right">
+                                            <div class="sundefined">$balance.value</div>
+                                        </td>
                                     <td align="left">
                                         <div class="sundefined">$balance.time</div>
                                     </td>
