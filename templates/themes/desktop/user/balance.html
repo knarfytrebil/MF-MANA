@@ -22,11 +22,11 @@ $def with (renderDict)
 <div class="frame-top">
     <h1 class="logo"><a href="javascript:;">能焰电商产品后台管理系统</a></h1>
     <div class="frame-nav" id="js_frame_nav_top">
-        <a href="#">主控面板</a>
-        <a href="#" class="focus">流量分析</a>
-        <a href="#">在线支付</a>
-        <a href="#">文件管理</a>
-        <a href="#">联系我们</a>
+        <a href="/">主控面板</a>
+        <a href="/user/analyze">流量分析</a>
+        <a href="/user/balance" class="focus">在线支付</a>
+        <a href="/user/upload">文件管理</a>
+        <a href="/user/contact">联系我们</a>
     </div>
     <ul class="user-box">
         <li><a href="#" class="pull-menu">退出系统</a> </li>
@@ -37,11 +37,11 @@ $def with (renderDict)
         <div class="col-side clearfix">
             <div class="directory-tree clearfix">
                 <ol>
-                    <li><a href="#"><i class="inav home"></i>主控面板</a></li>
-                    <li><a href="#"><i class="inav report"></i>流量分析</a></li>
-                    <li><a href="#"><i class="inav pay"></i>在线支付</a></li>
-                    <li><a href="#"><i class="inav file"></i>文件管理</a></li>
-                    <li><a href="#"><i class="inav contact"></i>联系我们</a></li>
+                    <li><a href="/"><i class="inav home"></i>主控面板</a></li>
+                    <li><a href="/user/analyze"><i class="inav report"></i>流量分析</a></li>
+                    <li><a href="/user/balance"><i class="inav pay"></i>在线支付</a></li>
+                    <li><a href="/user/upload"><i class="inav file"></i>文件管理</a></li>
+                    <li><a href="/user/contact"><i class="inav contact"></i>联系我们</a></li>
                 </ol>
             </div>
         </div>
@@ -56,7 +56,7 @@ $def with (renderDict)
                 <div class="col-main col-index ">
                   <div class="flexigrid">
                         <div class="mDiv">
-                            <div class="ftitle">数据报表</div>
+                            <div class="ftitle">我的帐户:renderDict['user'].nick</div>
                         </div>
                         <div class="hDiv">
                             <div class="hDivBox">
@@ -69,8 +69,8 @@ $def with (renderDict)
                                             <th align="left" axis="col1" class="">
                                                 <div class="sundefined">日期</div>
                                             </th>
-                                            <th align="left" axis="col2">
-                                                <div>余额</div>
+                                            <th align="left" axis="col2" class="">
+                                                <div class="sundefined">页面</div>
                                             </th>
                                         </tr>
                                     </thead>
@@ -80,39 +80,18 @@ $def with (renderDict)
                         <div class="bDiv" style="height: 200px;">
                          <table cellspacing="0" cellpadding="0" border="0" id="example">
                             <tbody>
-                            <tr>
-                                <td align="left">
-                                  <div>内容1</div>
-                                </td>
-                                <td align="left">
-                                    <div>内容2</div>
-                                </td>
-                                <td align="left">
-                                  <div>内容3</div>
-                                </td>
-                            </tr>
-                            <tr class="erow">
-                                <td align="left">
-                                    <div>内容1</div>
-                                </td>
-                                <td align="left">
-                                  <div>内容2</div>
-                                </td>
-                                <td align="left">
-                                    <div>内容3</div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left">
-                                  <div>内容1</div>
-                                </td>
-                                <td align="left">
-                                    <div>内容2</div>
-                                </td>
-                                <td align="left">
-                                  <div>内容3</div>
-                                </td>
-                            </tr>
+                            $for balance in renderDict['balances']:
+                                <tr>
+                                    <td align="left">
+                                      <div>$balance.value</div>
+                                    </td>
+                                    <td align="left">
+                                        <div>$balance.time</div>
+                                    </td>
+                                    <td align="left">
+                                      <div>$balance.page</div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                      </div>
