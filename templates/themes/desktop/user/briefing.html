@@ -12,6 +12,15 @@ $def with (renderDict)
     <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.tipTip.js"></script>
+    <script type="text/javascript">
+
+    var $today = $(".today-data");
+    var $kul = $(".keyword-bg");
+                    
+    $today.hover(function(){$(this).children().eq(0).animate({ opacity:1,bottom:3,}, 500);},
+    function(){$(this).children().eq(0).animate({ opacity:0,bottom:-5 }, 100)}
+    )
+    </script>
 </head>
 <body>
 <div class="frame-top">
@@ -61,7 +70,28 @@ $def with (renderDict)
                     <div id="data-area">
                     $for page in renderDict['pages']:
                         <div class="today-data $page['name']">
-                            <h1>广告名称：$page['name']</h1>
+                            <div class="keyword-bg">
+                              <div class="keyword-con"> 
+                                <ul class="clearfix">
+                                    <li><span>流量</span></li>
+                                    <li><span>金额</span></li>
+                                    <li><span>管理</span></li>
+                                    <li><span>流量</span></li>
+                                    <li><span>金额</span></li>
+                                    <li><span>管理</span></li>
+                                    <li><span>流量</span></li>
+                                    <li><span>金额</span></li>
+                                    <li><span>管理</span></li>
+                                    <li><span>流量</span></li>
+                                    <li><span>金额</span></li>
+                                    <li><span>管理</span></li>
+                                </ul>
+                               </div>
+                            </div>
+                            <ul class="lab clearfix">
+                                <li>$page['name']</li>
+                                <li>单价：<span>3001元</span></li>
+                            </ul>
                             <div id="$page['name']-data clearfix">
                                 <em class="icon" style="background-color:#ff0000;"></em>
                                 <span class="$page['name'] data-title">今日流量：<em>$page['d']</em></span>
