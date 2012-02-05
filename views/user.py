@@ -102,4 +102,7 @@ class user(View):
 		return self.render.upload(renderDict)
 	
 	def contact(self):
+		from modules.Node import Node
+		node = Node('flame_node','local')
+		renderDict['messages'] = node._get(scope=renderDict['user'].id)
 		return self.render.contact(renderDict)
