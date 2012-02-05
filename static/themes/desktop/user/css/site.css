@@ -843,7 +843,7 @@ color:#fff;font-weight: bold;height:25px;line-height:25px;overflow: hidden;paddi
 .close{ height: 18px;padding: 1px; position: absolute;right:0;top:8px;width: 19px;color:#fff; font-weight:bold}
 
 .today-data{ padding-top:0}
-#lotus-data{ position:relative;top:10px;}
+.lotus-data{ position:relative;top:10px;}
 .today-data ul.lab li{ float:left;height:16px; position:relative; padding:3px 5px;border-radius:0 0 4px 4px; background:#313131; margin-right:5px; color:#fff}
 .today-data ul.lab li span{ color:#F90;text-shadow: 0 0px 0px #999; vertical-align:middle;}
 #lotus-data{ clear:both;}
