@@ -58,7 +58,8 @@ function plot_big(class_id,data){
     }
 
     var options = {
-        xaxis: { mode: "time", tickLength: 5 }
+        xaxis: { mode: "time" }
     };
-    var plot = $.plot($(class_id), [data], options);
+
+    $.plot($(class_id), [data], options);
 }
