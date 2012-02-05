@@ -104,5 +104,5 @@ class user(View):
 	def contact(self):
 		from modules.Node import Node
 		node = Node('flame_node','local')
-		renderDict['messages'] = node._get(order="id DESC",scope=renderDict['user'].id)
+		renderDict['messages'] = node._get(order="id DESC",scope=renderDict['user'].id)[:30]
 		return self.render.contact(renderDict)
