@@ -63,3 +63,17 @@ def DayAndMonth():
 	strd = datetime.datetime.strftime(d, "%Y-%m-%d")
 	strm = datetime.datetime.strftime(d, "%Y-%m")
 	return strd,strm
+
+def DateToTimeStamp(date):
+	import datetime
+	import time
+	x = datetime.datetime.strptime(date,"%Y-%m-%d")
+	x = x.timetuple()
+	return int(time.mktime(x))
+
+def HourToTimeStamp(date):
+	import datetime
+	import time
+	x = datetime.datetime.strptime(date,"%Y-%m-%d %H:%M:%S")
+	x = x.timetuple()
+	return int(time.mktime(x))

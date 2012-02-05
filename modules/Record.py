@@ -8,7 +8,8 @@ Copyright (c) 2011 ManaFlame. All rights reserved.
 """
 
 from modules.base import Base
-import urllib2
+from lib.common import DateToTimeStamp
+from lib.common import HourToTimeStamp
 
 def isLeap(yr):
     if not yr % 4 and (yr % 100 or not yr % 400):
@@ -51,6 +52,9 @@ class Record(Base):
 		x = []
 		i = 0
 		for item in data:
-			x.append([int(item.hour),int(item.value)])
+			if RecType == "day":
+				x.append([ HourToTimeStamp("%s %s:00:00" % (date,item.hour)) ,int(item.value)])
+			elif RecType == "month"
+				x.append([ DateToTimeStamp("%s %s:00:00" % (date,item.hour)),int(item.value)])
 			i += item.value
 		return x,i
