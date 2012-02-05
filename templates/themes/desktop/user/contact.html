@@ -72,7 +72,10 @@ $def with (renderDict)
 				<ol class="commit-group clearfix">
 				$for message in renderDict['messages']:
 					<li class="commit commit-group-item">
-						<img width="36" height="36" src="https://secure.gravatar.com/avatar/2c3ee78eeca048cb5d934e96dedcd977?s=140&amp;d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png" class="gravatar">
+							$if message.author != renderDict['user'].id:
+								<img width="36" height="36" src="$renderDict['path']/images/bill.jpg" class="gravatar">
+							$else:
+								<img width="36" height="36" src="$renderDict['path']/images/service.jpg" class="gravatar">
 							<div class="ft">
 							<p class="commit-title "><a class="message">
 							$if message.author != renderDict['user'].id:
