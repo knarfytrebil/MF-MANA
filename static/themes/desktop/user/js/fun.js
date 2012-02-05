@@ -58,8 +58,7 @@ function plot_big(class_id,data){
     }
 
     var options = {
-        xaxis: { mode: "time", tickLength: 5 },
-        grid: { markings: weekendAreas }
+        xaxis: { mode: "time", tickLength: 5 }
     };
     var plot = $.plot($(class_id), [data], options);
 }
