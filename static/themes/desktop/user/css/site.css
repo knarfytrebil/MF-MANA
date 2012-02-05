@@ -5,43 +5,43 @@
 ***************************************************************/
 /*-- public --*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, input, textarea, p, blockquote, th, td {
-	margin:0;
-	padding:0
+    margin:0;
+    padding:0
 }
 body {
-	font:normal 12px/16px "microsoft yahei";
-	background:#fff;
+    font:normal 12px/16px "microsoft yahei";
+    background:#fff;
 }
 a {
-	text-decoration:none;
-	color: #333;
+    text-decoration:none;
+    color: #333;
 }
 a:hover {
-	color: #d0461a;
+    color: #d0461a;
 }
 li {
-	list-style:none;
+    list-style:none;
 }
 .clear {
-	clear:both;
+    clear:both;
 }
 .clearfix:after {
-	visibility: hidden;
-	display: block;
-	font-size: 0;
-	content: " ";
-	clear: both;
-	height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
 .clearfix {
-	display: inline-table;
+    display: inline-table;
 }
 /* Hides from IE-mac \*/
 * html .clearfix {
-	height: 1%;
+    height: 1%;
 }
 .clearfix {
-	display: block;
+    display: block;
 }
 html, body {
     height: 100%; /* make the percentage height on placeholder work */
@@ -378,7 +378,6 @@ html, body {
     box-shadow: 0 0 1px 1px #FFFFFF inset, 0 1px 5px rgba(0, 0, 0, 0.1);
     height: 48px;
     margin: 10px;
-    overflow: hidden;
     padding: 14px 10px 14px 15px;
     position: relative;
     text-shadow: 0 1px 1px #999;
@@ -391,7 +390,6 @@ html, body {
 .today-data:hover,.disk-info:hover{
     background: #F67E19;
     box-shadow: 0 1px 2px #dbdbdb;
-    color: #f5f5f5;
 }
 .today-data .icon{
     display: block;
@@ -842,7 +840,7 @@ h1.title{
 .p-con li{ padding-bottom:10px}
 .p-con button{ margin-right:5px;background-color: #4C8FFC; border: 1px solid #276DDD;border-radius: 3px 3px 3px 3px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 color:#fff;font-weight: bold;height:25px;line-height:25px;overflow: hidden;padding: 0 18px;text-align: center;text-shadow: 0 1px #276DDD; cursor:pointer}
-.close{	height: 18px;padding: 1px; position: absolute;right:0;top:8px;width: 19px;color:#fff; font-weight:bold}
+.close{ height: 18px;padding: 1px; position: absolute;right:0;top:8px;width: 19px;color:#fff; font-weight:bold}
 
 .today-data{ padding-top:0}
 #lotus-data{ position:relative;top:10px;}
@@ -850,9 +848,10 @@ color:#fff;font-weight: bold;height:25px;line-height:25px;overflow: hidden;paddi
 .today-data ul.lab li span{ color:#F90;text-shadow: 0 0px 0px #999; vertical-align:middle;}
 #lotus-data{ clear:both;}
 .today-data:hover{ background:#edf8f6}
-.keyword-bg{background:#000; font-weight:bold;width:196px;height:54px; position:absolute;right:-204px;bottom:-5px;margin:-28px 0 0 -99px;border-radius:4px; color:#fff; z-index:9999;filter:alpha(opacity=0);opacity:0;box-shadow: 0 3px 3px #000;}
+.keyword-bg{background:#000; font-weight:bold;width:196px;height:54px; position:absolute;right:-204px;bottom:-5px;margin:-28px 0 0 -99px;border-radius:4px; color:#fff; z-index:9999;filter:alpha(opacity=0);opacity:0;box-shadow: 0 3px 3px #000;+display:none;+filter:alpha(opacity=100);}
 .keyword-bg .keyword-con{ margin:1px; background:#000;height:100%;height:48px;border-radius:4px; padding:2px;word-wrap: break-word;}
 .keyword-con ul{ position:relative;left:12px}
 .keyword-bg li{ float:left; margin-right:10px;text-shadow:none; display:inline;}
 .keyword-bg li span{ float:left; min-width:25px;}
 .col-index{ overflow:visible; z-index:99}
+.hDivBox div{ text-align:left;}
