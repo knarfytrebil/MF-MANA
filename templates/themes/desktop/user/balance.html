@@ -58,28 +58,22 @@ $def with (renderDict)
                         <div class="mDiv">
                             <div class="ftitle">我的帐户 : $renderDict['user'].nick</div>
                         </div>
-                        <div class="hDiv">
-                            <div class="hDivBox">
-                                <table cellspacing="0" cellpadding="0">
-                                    <thead>
-                                        <tr>
-                                            <th align="left">
-                                                <div class="sundefined">金额</div>
-                                            </th>
-                                            <th align="left">
-                                                <div class="sundefined">日期</div>
-                                            </th>
-                                            <th align="left">
-                                                <div class="sundefined">页面</div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
                         <div class="bDiv" style="height: 400px;">
                          <table cellspacing="0" cellpadding="0" border="0" id="example">
                             <tbody>
+                                <thead>
+                                    <tr>
+                                        <th align="left">
+                                            <div class="sundefined">金额</div>
+                                        </th>
+                                        <th align="left">
+                                            <div class="sundefined">日期</div>
+                                        </th>
+                                        <th align="left">
+                                            <div class="sundefined">页面</div>
+                                        </th>
+                                    </tr>
+                                </thead>
                             $for balance in renderDict['balances']:
                                 <tr>
                                     <td align="left">
