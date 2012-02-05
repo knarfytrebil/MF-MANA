@@ -80,9 +80,9 @@ function showTooltip(x, y, contents) {
         display: 'none',
         top: y + 5,
         left: x + 5,
-        border: '1px solid #fdd',
-        padding: '2px',
-        'background-color': '#fee',
+        border: '1px solid #001',
+        padding: '4px',
+        'background-color': '#000',
         opacity: 0.80
     }).appendTo("body").fadeIn(200);
 }
@@ -100,7 +100,7 @@ function BindToolTip(plottarget) {
                     y = item.datapoint[1].toFixed(2);
                 
                 showTooltip(item.pageX, item.pageY,
-                            item.series.label + " of " + x + " = " + y);
+                            "流量 ＝ " + y);
             }
         }
         else {
