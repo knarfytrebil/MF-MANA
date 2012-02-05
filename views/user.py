@@ -78,6 +78,10 @@ class user(View):
 	def briefing(self):
 		from modules.Balance import Balance
 		from modules.Record import Record
+		from modules.Tag import Tag
+		from modules.Page import Page
+		page = Page('flame_page','local')
+		tag = Tag('flame_tag','local')
 		DM = DayAndMonth()
 		strd = DM[0]
 		strm = DM[1]
@@ -88,9 +92,10 @@ class user(View):
 		PageList = renderDict['user'].list.split(',')
 		renderDict['pages'] = []
 		for item in PageList:
+			_page = page._get(name=item)[0]
 			page = {}
-			page['tags'] = ""
-			page['price'] = ""
+			page['tags'] = tag._get(parent=_page.id)
+			page['price'] = _page.click
 			d_data = record.Get(strd,item,'day')
 			m_data = record.Get(strm,item,'month')
 			page['log'] = d_data[0]

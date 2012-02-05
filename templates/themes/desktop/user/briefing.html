@@ -72,24 +72,14 @@ $def with (renderDict)
                             <div class="keyword-bg">
                               <div class="keyword-con"> 
                                 <ul class="clearfix">
-                                    <li><span>流量</span></li>
-                                    <li><span>金额</span></li>
-                                    <li><span>管理</span></li>
-                                    <li><span>流量</span></li>
-                                    <li><span>金额</span></li>
-                                    <li><span>管理</span></li>
-                                    <li><span>流量</span></li>
-                                    <li><span>金额</span></li>
-                                    <li><span>管理</span></li>
-                                    <li><span>流量</span></li>
-                                    <li><span>金额</span></li>
-                                    <li><span>管理</span></li>
+                                $for tag in renderDict['tags']:
+                                    <li><span>tag.name</span></li>
                                 </ul>
                                </div>
                             </div>
                             <ul class="lab clearfix">
                                 <li>$page['name']</li>
-                                <li>单价：<span>3001元</span></li>
+                                <li>单价：<span>$page['price']元</span></li>
                             </ul>
                             <div class="lotus-data clearfix">
                                 <em class="icon" style="background-color:#ff0000;"></em>
