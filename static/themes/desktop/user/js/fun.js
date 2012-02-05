@@ -63,7 +63,6 @@ function plot_big(class_id,data){
             bars: {show: true} 
         },
         xaxis: { mode: "time" },
-        minTickSize: [1,"hour"],
         grid: { markings: weekendAreas }
     };
 
