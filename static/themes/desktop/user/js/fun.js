@@ -59,7 +59,8 @@ function plot_big(class_id,data){
 
     var options = {
         xaxis: { mode: "time" },
-        minTickSize: [1, "month"]
+        minTickSize: [1, "month"],
+        grid: { markings: weekendAreas }
     };
 
     $.plot($(class_id), [data], options);
