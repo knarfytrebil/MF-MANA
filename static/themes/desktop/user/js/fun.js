@@ -59,11 +59,12 @@ function weekendAreas(axes) {
 function plot_big(class_id,data){
 
     var options = {
-        series: {
-            bars: {show: true} 
-        },
+        bars: { show: true, barWidth: 0.5, fill: 0.9 },
         xaxis: { mode: "time" },
-        grid: { markings: weekendAreas }
+        grid: { 
+            markings: weekendAreas,
+            backgroundColor: { colors: ["#fff", "#eee"] }
+        }
     };
 
     $.plot($(class_id), [data], options);
