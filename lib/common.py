@@ -69,11 +69,11 @@ def DateToTimeStamp(date):
 	import time
 	x = datetime.datetime.strptime(date,"%Y-%m-%d")
 	x = x.timetuple()
-	return int(time.mktime(x))*10
+	return int(time.mktime(x))*1000
 
 def HourToTimeStamp(date):
 	import datetime
 	import time
 	x = datetime.datetime.strptime(date,"%Y-%m-%d %H:%M:%S")
 	x = x.timetuple()
-	return int(time.mktime(x))*10
+	return int(time.mktime(x))*1000
