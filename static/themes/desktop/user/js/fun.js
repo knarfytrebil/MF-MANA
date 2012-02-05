@@ -80,6 +80,7 @@ function showTooltip(x, y, contents) {
         display: 'none',
         top: y + 5,
         left: x + 5,
+        'color' : '#FFF',
         border: '1px solid #001',
         padding: '4px',
         'background-color': '#000',
