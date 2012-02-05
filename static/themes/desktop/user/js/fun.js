@@ -111,3 +111,16 @@ function BindToolTip(plottarget) {
         
     });
 }
+
+//resize
+$(function(){
+    var h = $(window).height() - 40;
+    $('.frame-container').css({height: h+'px'});
+    $('.file-data ul li').click(function(){
+        $('#fancy-box').show();
+        $('#box-bd').css('opacity','0.1');
+        $('#fancy-box .box-title a').click(function(){
+            $('#fancy-box').hide();
+    });
+    })
+});
