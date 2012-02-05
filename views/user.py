@@ -89,6 +89,8 @@ class user(View):
 		renderDict['pages'] = []
 		for item in PageList:
 			page = {}
+			page['tags'] = ""
+			page['price'] = ""
 			d_data = record.Get(strd,item,'day')
 			m_data = record.Get(strm,item,'month')
 			page['log'] = d_data[0]
