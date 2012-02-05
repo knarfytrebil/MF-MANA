@@ -101,20 +101,17 @@ $def with (renderDict)
 				</div>
 				<!--col main end-->
 				<div class="col-sub">
-					<div class="user-info-box">
-						<div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">ahkjxy</a>
-							<ul class="user-approve">
-								<li><a href="#">2012-12-23</a></li>
-							</ul>
-						</div>
-						<ul class="user-info-list">
-							<li><em>开通日期：</em><span>2012-12-12 16：23</span></li>
-							<li><em>开通流量：</em><span>20000</span></li>
-							<li><em>使用流量：</em><span>10000</span></li>
-							<li><em>流量剩余：</em><span>10000</span></li>
-							<li><em>账户余额：</em><span style="color:red;">3000</span><a class="button btn-red" href="#">充值</a></li>
-						</ul>
-					</div>
+                    <div class="user-info-box">
+                        <div class="user-info-top"><a href="#"><img alt="" src="images/cg3iv_m.png"></a> <a target="_blank" href="#">$renderDict['user'].nick</a>
+                            <ul class="user-approve">
+                                <li><a href="#">$renderDict['user'].date_login</a></li>
+                            </ul>
+                        </div>
+                        <ul class="user-info-list">
+                            <li><em>开通日期：</em><span>$renderDict['user'].date_register</span></li>
+                            <li><em>账户余额：</em><span style="color:red;">$renderDict['user'].balance_left</span><a class="button btn-red" href="#">充值</a></li>
+                        </ul>
+                    </div>
 					<div class="sub-tips sub-notice">
 						<h3><span><a href="javascript:;">新手入门</a></span></h3>
 						<div style="height:120px;" class="notice-list">
