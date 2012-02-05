@@ -1,4 +1,4 @@
-$def with (renderDict)
+$def witd (renderDict)
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -6,12 +6,12 @@ $def with (renderDict)
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="Keywords" content="#">
 	<meta name="Description" content="#">
-	<link href="$renderDict['path']/css/site.css" rel="stylesheet" type="text/css">
-	<link href="$renderDict['path']/css/flexigrid.pack.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
-	<script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
+	<link href="$renderDict['patd']/css/site.css" rel="stylesheet" type="text/css">
+	<link href="$renderDict['patd']/css/flexigrid.pack.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="$renderDict['patd']/js/fun.js"></script>
+	<script type="text/javascript" src="$renderDict['patd']/js/jquery.js"></script>
 	<!--[if IE 6]>
-		<script type="text/javascript" src="$renderDict['path']/js/ie.js"></script>
+		<script type="text/javascript" src="$renderDict['patd']/js/ie.js"></script>
 		<script type="text/javascript" src="http://dillerdesign.com/experiment/DD_belatedPNG/DD_belatedPNG_0.0.8a-min.js"></script>
 		<script type="text/javascript">
 			DD_belatedPNG.fix('.logo a,.inav,.upload-images a img');
@@ -63,38 +63,38 @@ $def with (renderDict)
 							<tbody>
 								<thead>
 									<tr>
-										<th align="left">
+										<td align="left">
 											<div class="sundefined">页面</div>
-										</th>
-										<th align="right">
+										</td>
+										<td align="right">
 											<div class="sundefined">金额</div>
-										</th>
-										<th align="left">
+										</td>
+										<td align="left">
 											<div class="sundefined">日期</div>
-										</th>
+										</td>
 									</tr>
 								</thead>
 							$for balance in renderDict['balances']:
 								<tr>
-									<th align="left">
+									<td align="left">
 										<div class="sundefined">$balance.page</div>
-									</th>
+									</td>
 									$if balance.value > 0:
-										<th align="right">
+										<td align="right">
 											<div class="sundefined">$balance.value</div>
-										</th>
+										</td>
 									$else:
-										<th align="right">
+										<td align="right">
 											<div class="sundefined">$balance.value</div>
-										</th>
-									<th align="left">
+										</td>
+									<td align="left">
 										<div class="sundefined">$balance.time</div>
-									</th>
+									</td>
 								</tr>
 							<tr>
-								<th align="right">余额</th>
-								<th align="right">$renderDict['left']</th>
-								<th></th>
+								<td align="right">余额</td>
+								<td align="right">$renderDict['left']</td>
+								<td></td>
 							</tr>
 							</tbody>
 						</table>
@@ -141,7 +141,7 @@ $def with (renderDict)
 								<span class="pPageStat">Displaying NaN to NaN of NaN items</span>
 							</div>
 						</div>
-						<div style="clear: both;"></div>
+						<div style="clear: botd;"></div>
 					 </div> -->
 				</div>
 				</div>
