@@ -10,7 +10,6 @@ from views.base import View
 
 from modules.User import User
 
-
 _User = User('flame_user','local')
 
 cookie = Cookie(_User)
