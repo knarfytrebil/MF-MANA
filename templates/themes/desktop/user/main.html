@@ -83,7 +83,10 @@ $def with (renderDict)
 								
 								<li id="List_$page['name']_1" style="display: none;">
 								<script type="text/javascript">
-									plot_big("#List_$page['name']_1",[{ data: $page['mlog'] , label: "流量", color: "#333" },{ data: $page['rate'] , label: "比例", color: "#555" }, lines: { show: true, fill: true } ]);
+									plot_big("#List_$page['name']_1",[
+										{ data: $page['mlog'] , label: "流量", color: "#333" },
+										{ data: $page['rate'] , label: "比例", color: "#555" , lines: { show: true, fill: true }} 
+									]);
 									BindToolTip("#List_$page['name']_1");
 								</script>	
 								</li>
