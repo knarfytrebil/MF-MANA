@@ -50,11 +50,18 @@ class Record(Base):
 	def Get(self,date,page,RecType):
 		data = self._get(date=date,page=page,kind=rdic[RecType])
 		x = []
+		y = []
 		i = 0
 		for item in data:
 			if RecType == "day":
 				x.append([ HourToTimeStamp("%s %s:00:00" % (date,item.hour)) ,int(item.value)])
 			elif RecType == "month":
 				x.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(item.value)])
+				y.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(self.frate(item.id)*item.value) ])
 			i += item.value
 		return x,i
+	
+	def _frate(self,parent):
+		from modules.Rate import Rate
+		rate = Rate('flame_fake_rate','local')
+		return rate._get(parent=parent)[0].rate
