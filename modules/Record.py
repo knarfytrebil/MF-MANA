@@ -64,4 +64,8 @@ class Record(Base):
 	def _frate(self,parent):
 		from modules.Rate import Rate
 		rate = Rate('flame_fake_rate','local')
-		return rate._get(parent=parent)[0].rate
+		try:
+			x = rate._get(parent=parent)[0].rate
+		except IndexError:
+			x = 0
+		return x
