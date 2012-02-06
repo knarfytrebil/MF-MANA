@@ -57,8 +57,10 @@ class user(View):
 	def chart(self):
 		from modules.Record import Record
 		from modules.Tag import Tag
+		from modules.Page import Page
 		record = Record('flame_records','local')
 		tag = Tag('flame_tag','local')
+		_page = Page('flame_page','local')
 		DM = DayAndMonth()
 		strd = DM[0]
 		strm = DM[1]
@@ -71,7 +73,7 @@ class user(View):
 			page['log'] = d_data[0]
 			page['mlog'] = m_data[0]
 			page['rate'] = m_data[2]
-			page['labels'] = tag._get(parent=item.id)
+			page['labels'] = tag._get(parent=_page._get(name=item)[0].id)
 			page['d'] = d_data[1]
 			page['m'] = m_data[1]
 			page['name'] = item
