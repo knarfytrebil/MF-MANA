@@ -57,7 +57,7 @@ class Record(Base):
 				x.append([ HourToTimeStamp("%s %s:00:00" % (date,item.hour)) ,int(item.value)])
 			elif RecType == "month":
 				x.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(item.value)])
-				y.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(self.frate(item.id)*item.value) ])
+				y.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(self._frate(item.id)*item.value) ])
 			i += item.value
 		return x,i
 	
