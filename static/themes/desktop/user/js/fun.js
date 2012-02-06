@@ -88,6 +88,13 @@ function showTooltip(x, y, contents) {
     }).appendTo("body").fadeIn(200);
 }
 
+//logout
+function logout(){
+        $.cookie('uis','null',{path:'/'});
+        window.location.replace("/")
+};
+
+///
 function BindToolTip(plottarget) {
     var previousPoint = null;
     $(plottarget).bind("plothover", function (event, pos, item) {

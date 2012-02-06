@@ -41,6 +41,8 @@ class user(View):
 				return self.upload()
 			if page == "contact":
 				return self.contact()
+			if page == "register":
+				return self.register()
 		else:
 			return web.seeother('/')
 	
@@ -119,3 +121,6 @@ class user(View):
 		node = Node('flame_node','local')
 		renderDict['messages'] = node._get(order="id DESC",scope=renderDict['user'].id)
 		return self.render.contact(renderDict)
+	
+	def register(self):
+		return self.render.register()

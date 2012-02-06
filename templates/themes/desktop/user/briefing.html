@@ -12,6 +12,7 @@ $def with (renderDict)
     <script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
     <script type="text/javascript" src="$renderDict['path']/js/jquery.tipTip.js"></script>
+    <script src="$renderDict['path']/js/jquery.cookie.js"></script>
     <!--[if IE 6]>
         <script type="text/javascript" src="$renderDict['path']/js/ie.js"></script>
         <script type="text/javascript" src="http://dillerdesign.com/experiment/DD_belatedPNG/DD_belatedPNG_0.0.8a-min.js"></script>
@@ -31,7 +32,7 @@ $def with (renderDict)
         <a href="/user/contact">联系我们</a>
     </div>
     <ul class="user-box">
-        <li><a href="#" class="pull-menu">退出系统</a> </li>
+        <li><a href="javascript:Logout();" class="pull-menu">退出系统</a> </li>
     </ul>
 </div>
 <div class="frame-container clearfix">
