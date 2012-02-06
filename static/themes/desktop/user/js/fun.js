@@ -69,7 +69,7 @@ function plot_big(class_id,data){
         }
     };
 
-    $.plot($(class_id), [{ data: data, label: "流量", color: "#333" }], options);
+    $.plot($(class_id), data , options);
 }
 
 
