@@ -68,6 +68,7 @@ class user(View):
 			m_data = record.Get(strm,item,'month')
 			page['log'] = d_data[0]
 			page['mlog'] = m_data[0]
+			page['rate'] = m_data[2]
 			page['d'] = d_data[1]
 			page['m'] = m_data[1]
 			page['name'] = item

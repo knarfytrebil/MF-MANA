@@ -59,7 +59,7 @@ class Record(Base):
 				x.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(item.value)])
 				y.append([ DateToTimeStamp("%s-%s" % (date,item.hour)),int(self._frate(item.id)*item.value) ])
 			i += item.value
-		return x,i
+		return x,i,y
 	
 	def _frate(self,parent):
 		from modules.Rate import Rate
