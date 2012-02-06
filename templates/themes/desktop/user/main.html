@@ -87,7 +87,7 @@ $def with (renderDict)
 									plot_big("#List_$page['name']_1",[
 										{ data: $page['mlog'] , label: "流量", color: "#333" },
 										{ data: $page['rate'] , label: "
-										$for tag in renderDict['labels']:
+										$for tag in page['labels']:
 											$tag.name
 										", color: "#FF0033" , lines: { show: true, fill: true }} 
 									]);
