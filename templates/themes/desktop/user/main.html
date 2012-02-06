@@ -10,6 +10,7 @@ $def with (renderDict)
 	<script type="text/javascript" src="$renderDict['path']/js/jquery.js"></script>
 	<script type="text/javascript" src="$renderDict['path']/js/fun.js"></script>
 	<script type="text/javascript" src="$renderDict['path']/js/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="http://people.iola.dk/olau/flot/jquery.flot.threshold.js"></script>
 	<script language="javascript" type="text/javascript" src="http://people.iola.dk/olau/flot/jquery.flot.resize.js"></script>
     <!--[if IE 6]>
         <script type="text/javascript" src="$renderDict['path']/js/ie.js"></script>
@@ -85,7 +86,10 @@ $def with (renderDict)
 								<script type="text/javascript">
 									plot_big("#List_$page['name']_1",[
 										{ data: $page['mlog'] , label: "流量", color: "#333" },
-										{ data: $page['rate'] , label: "比例", color: "#FF0033" , lines: { show: true, fill: true }} 
+										{ data: $page['rate'] , label: "
+										$for tag in renderDict['tags']:
+											$tag.name
+										", color: "#FF0033" , lines: { show: true, fill: true }} 
 									]);
 									BindToolTip("#List_$page['name']_1");
 								</script>	
