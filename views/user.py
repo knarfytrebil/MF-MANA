@@ -56,7 +56,7 @@ class user(View):
 	
 	def chart(self):
 		from modules.Record import Record
-		record = Record('flame_record','local')
+		record = Record('flame_records','local')
 		DM = DayAndMonth()
 		strd = DM[0]
 		strm = DM[1]
@@ -85,7 +85,7 @@ class user(View):
 		DM = DayAndMonth()
 		strd = DM[0]
 		strm = DM[1]
-		record = Record('flame_record','local')
+		record = Record('flame_records','local')
 		balance = Balance('flame_balance','local')
 		renderDict['total'] = balance.Total(renderDict['user'].id)
 		renderDict['left'] = balance.Left(renderDict['user'].id)

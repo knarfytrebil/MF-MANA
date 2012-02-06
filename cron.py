@@ -11,7 +11,7 @@ log = Logs('AccessLog')
 balance = Balance('flame_balance','local')
 user = User('flame_user','local')
 page = Page('flame_page','local')
-record = Record('flame_record','local')
+record = Record('flame_records','local')
 
 USERS = user._get(status='paid')
 
