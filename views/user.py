@@ -73,7 +73,7 @@ class user(View):
 			page['log'] = d_data[0]
 			page['mlog'] = m_data[0]
 			page['rate'] = m_data[2]
-			page['labels'] = ','.join([x.name for x in tag._get(parent=_page._get(name=item)[0].id)])
+			page['labels'] = '|'.join([x.name for x in tag._get(parent=_page._get(name=item)[0].id)])
 			page['d'] = d_data[1]
 			page['m'] = m_data[1]
 			page['name'] = item
