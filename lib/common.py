@@ -77,3 +77,12 @@ def HourToTimeStamp(date):
 	x = datetime.datetime.strptime(date,"%Y-%m-%d %H:%M:%S")
 	x = x.timetuple()
 	return int(time.mktime(x))*1000 - 57500000
+
+def GetFolderInfo(self,username):
+	import os
+	udir = "/home/user_folders/%s/" % username
+	fileinfo = []
+	for root,dirs,files in os.walk(u_dir):
+		for name in files:
+			fileinfo.append((name,os.path.getsize(root+name)))
+	return fileinfo

@@ -114,6 +114,8 @@ class user(View):
 		return self.render.briefing(renderDict)
 	
 	def upload(self):
+		from lib.common import GetFolderInfo
+		renderDict['files'] = GetFolderInfo(renderDict['user'].name)
 		return self.render.upload(renderDict)
 	
 	def contact(self):

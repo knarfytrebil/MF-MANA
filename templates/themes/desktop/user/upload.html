@@ -64,34 +64,13 @@ $def with (renderDict)
                     <div class="file-data">
                         <h1 class="title">文件管理</h1>
                         <ul class="clearfix">
+                        $for file in renderDict['files']:
                             <li class="draggable">
                                 <p class="upload-images"><a href="#"><img src="$renderDict['path']/images/zip.png"></a></p>
-                                <h4>文件名称</h4>
-                                <p class="upload-data">12.3M</p>
-                                <p class="upload-data">2012-11-10 10:23</p>
+                                <h4>$file[0]</h4>
+                                <p class="upload-data">$file[1]</p>
                                 <div class="upload-fun">
                                     <a id="delete" href="javascript:;">删除</a>
-                                    <a id="view" href="javascript:;">预览</a>
-                                </div>
-                            </li>
-                            <li class="draggable">
-                                <p class="upload-images"><a href="#"><img src="$renderDict['path']/images/zip.png"></a></p>
-                                <h4>文件名称</h4>
-                                <p class="upload-data">12.3M</p>
-                                <p class="upload-data">2012-11-10 10:23</p>
-                                <div class="upload-fun">
-                                    <a id="delete" href="javascript:;">删除</a>
-                                    <a id="view" href="javascript:;">预览</a>
-                                </div>
-                            </li>
-                            <li class="draggable">
-                                <p class="upload-images"><a href="#"><img src="$renderDict['path']/images/zip.png"></a></p>
-                                <h4>文件名称</h4>
-                                <p class="upload-data">12.3M</p>
-                                <p class="upload-data">2012-11-10 10:23</p>
-                                <div class="upload-fun">
-                                    <a id="delete" href="javascript:;" >删除</a>
-                                    <a id="view" href="javascript:;">预览</a>
                                 </div>
                             </li>
                         </ul>
