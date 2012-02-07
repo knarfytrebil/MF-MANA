@@ -82,7 +82,7 @@ def GetFolderInfo(username):
 	import os
 	udir = "/home/user_folders/%s/" % username
 	fileinfo = []
-	for root,dirs,files in os.walk(u_dir):
+	for root,dirs,files in os.walk(udir):
 		for name in files:
 			fileinfo.append((name,os.path.getsize(root+name)))
 	return fileinfo
