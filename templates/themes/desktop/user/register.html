@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <title>用户协议</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        .protocal-bd{ width:930px; margin: 0 auto;}
+        body{ font-size:12px; font-family:'microsoft yahei',arial;}
+        img {
+            border:none;
+        }
+        ul li{ list-style:none;}
+        .protocal-hd{ height:32px; line-height: 32px; background: #F67E19; color:#fff; padding-left:16px; font-size: 16px;}
+        .content{ padding: 10px 5px;height:200px; overflow: scroll;}
+        strong{ padding-bottom: 5px;}
+        .protocal-btn{ padding-top: 10px;}
+        .protocal-btn a{ padding-left:20px;}
+        .fr{ float: right;}
+        .fl{float: left;}
+        .clear{ clear: both;}
+        .protocal-info{ padding:15px; border-top:2px solid #F67E19;}
+        .protocal-info dl{ position: relative;}
+        .protocal-info dl dt{ float: left; width:160px; font-size:15px;}
+        .protocal-info em{ color:#f00;}
+        .protocal-info input{ font:13px/15px Arial;padding-left:4px; padding-top:2px;width:222px;*width:218px; font-weight:700;color:#333; height:22px; line-height:22px;}
+        #commentForm { }
+        label.error { display:none; color: red; padding-left: 10px; font-size:14px; }
+        .info{ background: url(info.gif) left 10px no-repeat;padding:10px; margin-left: 10px; }
+        .message{ position: absolute; left:380px; top:3px;_left:230px;}
+        .valiOK{ background: url(right.gif) left 10px no-repeat;padding:10px; margin-left: 10px; }
+        .regcue{ color:#999;}
+        .protocal-btn input{ width:92px; height:30px; border: none; cursor: pointer;}
+        .submit{ background: url(btn-green.gif)}
+        .cancel{ background: url(btn-blue.gif)}
+        .regcue{ font-size: 14px; color:#666;}
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/jquery.validate.js" type="text/javascript"></script>
+    <script src="js/tjReg.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <div class="protocal-bd">
+    <form id="regImproveForm" method="post" action="">
+        <h1>用户信息填写</h1>
+        <div class="protocal-info">
+            <dl>
+                <dt>用户名<em>*</em></dt>
+                <dd><input stype="text" id="name" name="name" value=""/><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="nameerror">请填写您的真实中文姓名。</span></dd>
+            </dl>
+            <dl>
+                <dt>公司名称<em>*</em></dt>
+                <dd><input name="comname" id="comname" type="text" /><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="comnameerror">请填写您的公司名称。</span></dd>
+            </dl>
+            <dl>
+                <dt>法人姓名<em>*</em></dt>
+                <dd><input name="faren" id="faren" type="text" /><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="farenerror">请填写您的法人姓名。</span></dd>
+            </dl>
+            <dl>
+                <dt>法人身份证号码<em>*</em></dt>
+                <dd><input name="certify" id="certify" type="text" /><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="certifyname">请填写法人身份证号码。</span></dd>
+            </dl>  
+            <dl>
+                <dt>组织机构代码证号码<em>*</em></dt>
+                <dd><input name="jigou" id="jigou" type="text" /><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="jigouname">请填写您的组织机构代码证号码。</span></dd>
+            </dl>
+            <dl>
+                <dt>注册所在地<em>*</em></dt>
+                <dd><input name="szd" type="text" id="szd" /><span class="tipicon cueCommen">&nbsp;</span></dd>
+                <dd class="message"><span class="regcue" id="szdname">请填写您的公司注册所在地。</span></dd>
+            </dl> 
+        </div>
+      
+        <div class="protocal-hd"><strong>能焰电商</strong>用户协议</div>
+        <div class="content">
+            <ul>
+                <li><p><strong>1. 服务条款的确认和接纳 </strong><br>
+                    接下来的描述是。。。</p>
+                </li>
+                <li><p><strong>2. 关于网络安全 </strong><br>
+                    接下来的描述是。。。</p>
+                </li>
+            </ul>
+        </div>
+        <div style=" padding-left: 20px; margin-bottom: 5px; font-size: 14px;"><input type="checkbox" name="ck" id="ck" checked>我已阅读并同意本协议的内容 </div>
+        <div class="protocal-btn">
+            <input class="submit" type="submit" value="" id="proceed">
+            <input class="cancel" type="submit" value="">
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>

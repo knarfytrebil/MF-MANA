@@ -41,9 +41,9 @@ class user(View):
 				return self.upload()
 			if page == "contact":
 				return self.contact()
+		else:
 			if page == "register":
 				return self.register()
-		else:
 			return web.seeother('/')
 	
 	def POST(self):
