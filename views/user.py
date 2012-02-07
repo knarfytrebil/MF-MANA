@@ -46,8 +46,9 @@ class user(View):
 				return self.register()
 			return web.seeother('/')
 	
-	def POST(self):
-		pass
+	def POST(self,page):
+		if page == "upload":
+			return "upload"
 	
 	def balance(self):
 		from modules.Balance import Balance
