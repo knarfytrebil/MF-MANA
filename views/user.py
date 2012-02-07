@@ -125,4 +125,4 @@ class user(View):
 		return self.render.contact(renderDict)
 	
 	def register(self):
-		return self.render.register()
+		return self.render.register(renderDict)
