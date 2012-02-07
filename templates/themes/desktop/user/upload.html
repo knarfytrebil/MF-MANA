@@ -64,7 +64,7 @@ $def with (renderDict)
                     <div class="file-data">
                         <h1 class="title">文件管理</h1>
                         <ul class="clearfix">
-                        <li class="draggable">
+                        <li class="draggable" id="upload">
                                 <p class="upload-images"><a href="#"><img src="$renderDict['path']/images/plus.png" height="50px"></a></p>
                                 <p class="upload-data">添加新文件</p>
                         </li>
@@ -128,7 +128,7 @@ $def with (renderDict)
         <div id="box" class="draggable">
             <div class="box-title">
                 <h1>用戶點擊試驗</h1>
-                <a href="javascript:;" onclick="close();">X</a>
+                <a href="javascript:void(0);" onclick="close();">X</a>
             </div>
         </div>
     </div>
