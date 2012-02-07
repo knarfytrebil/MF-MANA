@@ -121,7 +121,7 @@ function mean(data){
     for (var i = x - 1; i >= 0; i--) {
         total += data[i];
     };
-    return total;
+    return total/data.length;
 }
 
 //Big Plot
