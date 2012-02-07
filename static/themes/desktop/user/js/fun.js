@@ -86,7 +86,7 @@ function BindToolTip(plottarget) {
                 previousPoint = item.dataIndex;
                 
                 $("#tooltip").remove();
-        [1]        var x = item.datapoint[0].toFixed(2),
+                var x = item.datapoint[0].toFixed(2),
                     y = item.datapoint[1].toFixed(2);
                 
                 showTooltip(item.pageX, item.pageY,
