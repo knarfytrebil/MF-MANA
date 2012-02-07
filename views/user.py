@@ -28,9 +28,9 @@ class user(View):
 		v = self.agent_type()
 		self.render = self.render_is(v,THEME,SNIPPETS)
 		user = cookie.GET()
+		renderDict['path'] = "/static/themes/%s/%s" % (v,THEME)
 		if user:
 			renderDict['user'] = user
-			renderDict['path'] = "/static/themes/%s/%s" % (v,THEME)
 			if page == "balance":
 				return self.balance()
 			if page == "analyze":
