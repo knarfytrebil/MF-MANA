@@ -67,11 +67,8 @@ $def with (renderDict)
                         $for file in renderDict['files']:
                             <li class="draggable">
                                 <p class="upload-images"><a href="#"><img src="$renderDict['path']/images/zip.png"></a></p>
-                                <h4>$file[0]</h4>
-                                <p class="upload-data">$file[1]</p>
-                                <div class="upload-fun">
-                                    <a id="delete" href="javascript:;">删除</a>
-                                </div>
+                                <h4>文件名：$file[0]</h4>
+                                <p class="upload-data">大小：$file[1] byte</p>
                             </li>
                         </ul>
                     </div>
