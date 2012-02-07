@@ -80,7 +80,7 @@ $def with (renderDict)
 							<ul class="chart-display clearfix">
 								<li id="List_$page['name']_0">
 								<script type="text/javascript">
-								plot_big("#List_$page['name']_0",[{ data: $page['log'] , label: "流量", color: "#333" }]);
+								plot_big("#List_$page['name']_0",[{ data: $page['log'] , label: "流量", color: "#D1392B" }]);
 								BindToolTip("#List_$page['name']_0");
 								</script>	
 								</li>
@@ -90,8 +90,8 @@ $def with (renderDict)
 									var d = $page['mlog'];
 									var m = mean(d);
 									plot_big("#List_$page['name']_1",[
-										{ data: d , label: "流量", color: "#333"},
-										{ data: $page['rate'] , label: "标签精准度：$page['labels']", color: "#FF0033" , lines: { show: true, fill: true }} 
+										{ data: d , label: "流量", color: "#D1392B"},
+										{ data: $page['rate'] , label: "标签精准度：$page['labels']", color: "#FD8636" , lines: { show: true, fill: true }} 
 									]);
 									BindToolTip("#List_$page['name']_1");
 								</script>	
