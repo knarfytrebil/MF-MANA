@@ -86,7 +86,7 @@ function BindToolTip(plottarget) {
                 previousPoint = item.dataIndex;
                 
                 $("#tooltip").remove();
-                var x = item.datapoint[0].toFixed(2),
+        [1]        var x = item.datapoint[0].toFixed(2),
                     y = item.datapoint[1].toFixed(2);
                 
                 showTooltip(item.pageX, item.pageY,
@@ -119,7 +119,7 @@ function mean(data){
     var x = data.length;
     var total = 0;
     for (var i = x - 1; i >= 0; i--) {
-        total += data[i];
+        total += data[i][1];
     };
     return total/data.length;
 }
