@@ -48,7 +48,15 @@ class user(View):
 	
 	def POST(self,page):
 		if page == "upload":
-			return "upload"
+			x = web.input(myfile={})
+			filedir = '/path/where/you/want/to/save' # change this to the directory you want to store the file in.
+			if 'myfile' in x: # to check if the file-object is created
+				filepath=x.myfile.filename.replace('\\','/') # replaces the windows-style slashes with linux ones.
+				filename=filepath.split('/')[-1] # splits the and chooses the last part (the filename with extension)
+				fout = open(filedir +'/'+ filename,'w') # creates the file where the uploaded file should be stored
+				fout.write(x.myfile.file.read()) # writes the uploaded file to the newly created file.
+				fout.close() # closes the file, upload complete.
+		raise web.seeother('/upload')
 	
 	def balance(self):
 		from modules.Balance import Balance

@@ -55,24 +55,6 @@ function weekendAreas(axes) {
     return markings;
 }
 
-//Big Plot
-function plot_big(class_id,data){
-
-    var options = {
-        bars: { show: true },
-        points: { show: true },
-        xaxis: { mode: "time" },
-        grid: { 
-            markings: weekendAreas,
-            backgroundColor: { colors: ["#fff", "#eee"] },
-            hoverable: true
-        }
-    };
-
-    $.plot($(class_id), data , options);
-}
-
-
 //plot hover
 function showTooltip(x, y, contents) {
     $('<div id="tooltip">' + contents + '</div>').css( {
@@ -94,7 +76,7 @@ function logout(){
         window.location.replace("/")
 };
 
-///
+///Bind Tool Tip
 function BindToolTip(plottarget) {
     var previousPoint = null;
     $(plottarget).bind("plothover", function (event, pos, item) {
@@ -131,3 +113,31 @@ $(function(){
     });
     })
 });
+
+///Generate Mean
+function mean(data){
+    var x = data.length;
+    var total = 0;
+    for (var i = x - 1; i >= 0; i--) {
+        total += data[i];
+    };
+    return total;
+}
+
+//Big Plot
+function plot_big(class_id,data){
+    var t = mean(data);
+    var options = {
+        bars: { show: true },
+        points: { show: true },
+        xaxis: { mode: "time" },
+        threshold: { below: t, color: "rgb(200, 20, 30)" },
+        grid: { 
+            markings: weekendAreas,
+            backgroundColor: { colors: ["#fff", "#eee"] },
+            hoverable: true
+        }
+    };
+
+    $.plot($(class_id), data , options);
+}
