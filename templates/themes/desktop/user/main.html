@@ -87,8 +87,10 @@ $def with (renderDict)
 								
 								<li id="List_$page['name']_1" style="display: none;">
 								<script type="text/javascript">
+									var d = $page['mlog'];
+									var m = mean(d);
 									plot_big("#List_$page['name']_1",[
-										{ data: $page['mlog'] , label: "流量", color: "#333" },
+										{ data: d , label: "流量", color: "#333", threshold: { below: m, color: "rgb(200, 20, 30)" }},
 										{ data: $page['rate'] , label: "标签精准度：$page['labels']", color: "#FF0033" , lines: { show: true, fill: true }} 
 									]);
 									BindToolTip("#List_$page['name']_1");

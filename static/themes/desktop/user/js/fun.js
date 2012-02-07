@@ -126,12 +126,10 @@ function mean(data){
 
 //Big Plot
 function plot_big(class_id,data){
-    var t = mean(data);
     var options = {
         bars: { show: true },
         points: { show: true },
         xaxis: { mode: "time" },
-        threshold: { below: t, color: "rgb(200, 20, 30)" },
         grid: { 
             markings: weekendAreas,
             backgroundColor: { colors: ["#fff", "#eee"] },
