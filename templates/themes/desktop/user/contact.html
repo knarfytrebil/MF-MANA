@@ -28,7 +28,7 @@ $def with (renderDict)
 			<ul>
 				<li><label>标题:</label><input type="text" name="title" id="ftitle"/></li>
 				<li><label>内容:</label><textarea name="body" id="fbody"></textarea></li>
-				<li><label></label><button onClick="javascript:Submit('question');">提交</button><button onClick="javascript:Reset();">重置</button></li>
+				<li><label></label><button onClick="javascript:Submit('question');">提交</button></li>
 			</ul>
 		</form>
 		</div>
@@ -140,11 +140,6 @@ $def with (renderDict)
 	<script type="text/javascript">
 		function Submit(id){
 			document.getElementById(id).submit();
-		}
-
-		function Reset(){
-			$$("ftitle").value("");
-			$$("ftitle").text("");
 		}
 		$$(document).ready(function(){
 			var $$commitli = $$(".commit-box li");
