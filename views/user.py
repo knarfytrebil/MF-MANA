@@ -56,7 +56,11 @@ class user(View):
 				fout = open(filedir +'/'+ filename,'w') # creates the file where the uploaded file should be stored
 				fout.write(x.myfile.file.read()) # writes the uploaded file to the newly created file.
 				fout.close() # closes the file, upload complete.
-		raise web.seeother('/upload')
+		elif page == "speak":
+			words = web.input()
+			return words
+		else:
+			raise web.seeother('/user/briefing')
 	
 	def balance(self):
 		from modules.Balance import Balance
