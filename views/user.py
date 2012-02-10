@@ -65,7 +65,7 @@ class user(View):
 			else:
 				body = str(words.body.encode('utf-8','ignore'))
 				id = int(words.id.encode('utf-8','ignore'))
-				node.add(author=id,content=body)
+				node.add(author=id,content=body,scope=id)
 				raise web.seeother('/user/contact')
 		else:
 			raise web.seeother('/user/briefing')
