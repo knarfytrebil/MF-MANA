@@ -58,7 +58,7 @@ class user(View):
 				fout.close() # closes the file, upload complete.
 		elif page == "speak":
 			words = web.input()
-			return words
+			return words.title,words.body
 		else:
 			raise web.seeother('/user/briefing')
 	
