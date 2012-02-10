@@ -26,7 +26,7 @@ $def with (renderDict)
 		<div class="p-con">
 		<form id="question" action="/user/speak" method="POST">
 			<ul>
-				<li><label>标题:</label><input type="text" name="title" id="ftitle"/></li>
+				<input type="hidden" name="id" value="$renderDict['user'].id"/>
 				<li><label>内容:</label><textarea name="body" id="fbody"></textarea></li>
 				<li><label></label><button onClick="javascript:Submit('question');">提交</button></li>
 			</ul>

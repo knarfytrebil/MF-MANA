@@ -29,9 +29,6 @@ rdic = {'day':0,'month':1}
 
 class Record(Base):
 	"""docstring for Settings"""
-	def add(self,**kw):
-		id = self.last_id() + 1
-		self.sdb.insert(self.table,id=id,**kw)
 	
 	def renew(self,hour,date,page,value,RecType):
 		if self._thereis(hour,date,page,RecType):

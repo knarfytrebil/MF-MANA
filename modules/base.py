@@ -16,6 +16,10 @@ class Base():
 	def __init__(self,TName,db="norm"):
 		self.table = TName
 		self.sdb = dbDict[db]
+	
+	def add(self,**kw):
+		id = self.last_id() + 1
+		self.sdb.insert(self.table,id=id,**kw)
 
 	def count(self,key):
 		SQL = 'SELECT COUNT(%s) FROM %s'

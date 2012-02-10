@@ -58,7 +58,15 @@ class user(View):
 				fout.close() # closes the file, upload complete.
 		elif page == "speak":
 			words = web.input()
-			return words.title,words.body
+			from modules.Node import Node
+			node = Node('flame_node','local')
+			if words.title == u"" or words.body == u"" or words.id == u"":
+				raise web.seeother('/user/contact')
+			else:
+				body = str(words.body.encode('utf-8','ignore'))
+				id = int(words.id.encode('utf-8','ignore'))
+				node.add(author=id,content=body)
+				raise web.seeother('/user/contact')
 		else:
 			raise web.seeother('/user/briefing')
 	
