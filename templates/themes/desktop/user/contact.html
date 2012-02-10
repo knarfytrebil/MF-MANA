@@ -75,7 +75,7 @@ $def with (renderDict)
 				<ol class="commit-group clearfix">
 				$for message in renderDict['messages']:
 					<li class="commit commit-group-item">
-							$if message.author != renderDict['user'].id:
+							$if message.author == renderDict['user'].id:
 								<img width="36" height="36" src="$renderDict['path']/images/bill.jpg" class="gravatar">
 							$else:
 								<img width="36" height="36" src="$renderDict['path']/images/service.jpg" class="gravatar">
