@@ -102,7 +102,7 @@ function BindToolTip(plottarget) {
 }
 
 //resize
-$(function(){
+function(){
     var h = $(window).height() - 40;
     $('.frame-container').css({height: h+'px'});
     $('#upload').click(function(){
@@ -112,7 +112,7 @@ $(function(){
             $('#fancy-box').hide();
     });
     })
-});
+};
 
 ///Generate Mean
 function mean(data){
