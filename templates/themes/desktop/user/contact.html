@@ -82,9 +82,9 @@ $def with (renderDict)
 							<div class="ft">
 							<p class="commit-title "><a class="message">
 							$if message.author != renderDict['user'].id:
-								我
-							$else:
 								客服
+							$else:
+								我
 							</a></p>
 								<div class="commit-desc"><pre>$message.content</pre></div>
 								<div class="commit-meta">
