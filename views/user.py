@@ -60,7 +60,7 @@ class user(View):
 			words = web.input()
 			from modules.Node import Node
 			node = Node('flame_node','local')
-			if words.title == u"" or words.body == u"" or words.id == u"":
+			if words.body == u"" or words.id == u"":
 				raise web.seeother('/user/contact')
 			else:
 				body = str(words.body.encode('utf-8','ignore'))
