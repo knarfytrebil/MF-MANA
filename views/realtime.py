@@ -7,4 +7,4 @@ import json
 
 class realtime(View):
 	def GET(self):
-		return json.dumps(["address":"Shanghai","tm":"00:00:00"])
+		return json.dumps({"address": "Shanghai", "tm": "00:00:00" })
