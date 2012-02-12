@@ -12,6 +12,16 @@ class View():
 		templates_root = os.path.join(app_root,TEMPLATE_PATH+THEME)
 		return web.template.render(templates_root,globals=SNIPPETS)
 	
+	def _useragent(self):
+		try:
+			ua = web.ctx.env['HTTP_USER_AGENT']
+		except KeyError, e:
+			ua = "Unknown"
+		return ua
+	
+	def _ip(self):
+		return web.ctx.ip
+
 	def agent_type(self):
 		from lib import httpagentparser as UA_Parser
 		desktop = ['Linux','Windows','Macintosh','MacOS']
