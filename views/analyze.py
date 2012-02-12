@@ -5,7 +5,7 @@ import web
 from views.base import View
 
 
-class analyze(view):
+class analyze(View):
 	def GET(self):
 		ip = self._ip()
 		ua = self._useragent()
