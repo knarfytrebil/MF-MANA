@@ -8,9 +8,11 @@ from lib.AnaCookie import Cookie
 
 html = """
 <html>
+<script type="text/javascript" src="http://one-auction.com/js/jquery.js"></script>
 <script type="text/javascript">
 window.onbeforeunload = function(){
-return "必优博客提示您，您确定要退出页面吗？";
+$.post("http://117.102.189.222/mega_analyze", { cis: "%s" } );
+return;
 }
 </script>
 <html>
@@ -24,12 +26,13 @@ class analyze(View):
 		ua = self._useragent()
 		cookie = Cookie(ua,ip)
 		came = cookie.GET()
+		cis = ua + ip
 		if came:
 			pass
 		else:
-			cis = ua+ip
 			cookie.SET(cis=cis)
-		return html
+		return html % cis
 		
 	def POST(self):
-		pass
+		info = web.input()
+		return info
