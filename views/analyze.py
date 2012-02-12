@@ -33,12 +33,13 @@ class analyze(View):
 		came = cookie.GET()
 		cis = ua + ip
 		if came:
-			pass
+			print "came: " + cis 
 		else:
+			print "first time: " + cis
 			cookie.SET(cis=cis)
 		return html % encrypt(cis)
 		
 	def POST(self):
 		info = web.input()
-		print info
-		return info.cis
+		cis = info.cis
+		print "leaving or refreshing: " + cis
