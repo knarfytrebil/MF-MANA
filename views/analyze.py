@@ -5,6 +5,7 @@ import web
 from views.base import View
 from lib.spider import Crawler
 from lib.AnaCookie import Cookie
+from lib.common import encrypt
 
 html = """
 <html>
@@ -31,7 +32,7 @@ class analyze(View):
 			pass
 		else:
 			cookie.SET(cis=cis)
-		return html % cis
+		return html % encrypt(cis)
 		
 	def POST(self):
 		info = web.input()
