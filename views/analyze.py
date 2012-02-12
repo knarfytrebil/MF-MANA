@@ -41,4 +41,4 @@ class analyze(View):
 	def POST(self):
 		info = web.input()
 		print info
-		return info
+		return info.cis
