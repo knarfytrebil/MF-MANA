@@ -10,4 +10,4 @@ class analyze(View):
 		c = Crawler('117.102.189.222')
 		location = c.location(str(self._ip()))
 		ua = self._useragent()
-		return location,ua
+		return location + " " + ua
