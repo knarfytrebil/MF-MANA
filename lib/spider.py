@@ -24,7 +24,10 @@ class Crawler:
 		self.br.addheaders = [('User-agent','Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.1.1-1.fc9 Firefox/3.0.1')]
 
 	def location(self,ip):
-		self.current_page = self.br.open('http://www.114best.com/ip/114.aspx?w=%s' % ip)
+		try:
+			self.current_page = self.br.open('http://www.114best.com/ip/114.aspx?w=%s' % ip)
+		except Exception:
+			return "Earth"
 		soup = BeautifulSoup(self.current_page)
 		lo = soup.findAll('div', { "id" : "output" })[0].findAll('b')[1].text.encode('utf-8','ignore')
 		return lo
