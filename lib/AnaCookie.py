@@ -19,16 +19,11 @@ class Cookie:
 		"""set cookie"""
 		try:
 			"getting cookie"
-			uis = decrypt(web.cookies().uis).split(',')
-			username = uis[0]
-			password = uis[1]
-			BAuth = self.BasicAuth(username,password)
-			if BAuth:
-				return BAuth
-			return False
+			cis = web.cookies().cis
+			return 1
 		except Exception,e:
 			"if there is no cookie"
-			return False
+			return 0
 	
 	def SET(self,COOKIE_EXPIRE=COOKIE_EXPIRE,**kwargs):
 		for key in kwargs.keys():
