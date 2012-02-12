@@ -16,7 +16,7 @@ $(window).unload(function() {
 		type: 'POST',
 		async: false,
 		url: 'http://117.102.189.222/mega_analyze',
-		data: 'cis=' + %s
+		data: { cis : "%s" }
 		});
 });
 </script>
