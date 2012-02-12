@@ -17,4 +17,6 @@ class analyze(View):
 		if came:
 			return "you came before:" + location + " " + ua
 		else:
+			cis = ua+ip
+			cookie.SET(cis=cis)
 			return "you never came:" + location + " " + ua
