@@ -9,4 +9,4 @@ class realtime(View):
 	def GET(self):
 		web.header('Content-Type', 'application/javascript')
 		d = json.dumps({"address": "Shanghai", "tm": "00:00:00" })
-		return 'some_func(' + d + ');'
+		return 'gen_li(' + d + ');'
