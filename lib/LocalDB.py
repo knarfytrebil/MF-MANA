@@ -5,7 +5,7 @@ from web import database
 MYSQL_DB = "flame"
 MYSQL_USER = "root"
 MYSQL_PASS = "B166er"
-MYSQL_HOST = "127.0.0.1"
+MYSQL_HOST = "localhost"
 MYSQL_PORT = 3306
 
 DB = database(
