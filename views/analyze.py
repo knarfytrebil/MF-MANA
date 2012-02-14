@@ -6,7 +6,8 @@ from views.base import View
 from lib.spider import Crawler
 from lib.AnaCookie import Cookie
 from lib.common import encrypt
-
+from modules.Access import Access
+access = Access('flame_access','local')
 html = """
 <html>
 <script type="text/javascript" src="http://one-auction.com/js/jquery.js"></script>
@@ -31,15 +32,18 @@ class analyze(View):
 		ua = self._useragent()
 		cookie = Cookie(ua,ip)
 		came = cookie.GET()
-		cis = ua + ip
+		import time
+		cis = ua + '//' + ip + '//' + str(int(time.time()))  
 		if came:
 			print "came: " + cis 
 		else:
 			print "first time: " + cis
 			cookie.SET(cis=cis)
+		access.add(location=location,cis=cis,action="in")	
 		return html % encrypt(cis)
 		
 	def POST(self):
 		info = web.input()
 		cis = info.cis
+		access.add(cis=cis,action="out")	
 		print "leaving or refreshing: " + cis
