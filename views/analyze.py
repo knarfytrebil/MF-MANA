@@ -39,7 +39,7 @@ class analyze(View):
 		else:
 			print "first time: " + cis
 			cookie.SET(cis=cis)
-		access.add(location=location,cis=cis,action="in")	
+		access.add(location=location,cis=encrypt(cis),action="in")	
 		return html % encrypt(cis)
 		
 	def POST(self):
